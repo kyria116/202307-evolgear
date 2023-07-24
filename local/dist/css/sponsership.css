@@ -1,0 +1,334 @@
+.fontfix {
+  font-family: "Rubik", "Noto Sans TC", sans-serif;
+}
+
+main {
+  width: 100%;
+  background-color: rgb(0, 0, 0);
+}
+main .wrapper {
+  width: 100%;
+}
+
+.breadcrumb {
+  max-width: calc(100% - 80px);
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 63px;
+  height: 42px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+}
+@media all and (max-width: 575px) {
+  .breadcrumb {
+    display: none;
+  }
+}
+.breadcrumb li {
+  margin-right: 10px;
+}
+.breadcrumb li:last-child {
+  color: #fff;
+}
+.breadcrumb a {
+  color: #b4b4b4;
+}
+
+.banner {
+  width: 100%;
+}
+.banner img {
+  max-width: 100%;
+}
+
+h3 {
+  margin-top: 85px;
+  font-size: 34px;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 85px;
+}
+
+.content-in {
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #fff;
+  padding-bottom: 77px;
+}
+@media all and (max-width: 1359px) {
+  .content-in {
+    max-width: 100%;
+  }
+}
+.content-in .player-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+@media all and (min-width: 1100px) and (max-width: 1359px) {
+  .content-in .player-box {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+@media all and (min-width: 1100px) and (max-width: 1359px) {
+  .content-in .player-box {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+}
+@media all and (max-width: 1099px) {
+  .content-in .player-box {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+.content-in .player-box .pb-img .swiper {
+  width: 520px;
+  height: 520px;
+}
+@media all and (max-width: 1359px) {
+  .content-in .player-box .pb-img .swiper {
+    width: 420px;
+    height: 420px;
+  }
+}
+@media all and (min-width: 420px) and (max-width: 1359px) {
+  .content-in .player-box .pb-img .swiper {
+    max-width: 100%;
+  }
+}
+@media all and (max-width: 419px) {
+  .content-in .player-box .pb-img .swiper {
+    width: 100vw;
+    height: 100vw;
+  }
+}
+.content-in .player-box .pb-status {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+@media all and (min-width: 1100px) and (max-width: 1359px) {
+  .content-in .player-box .pb-status {
+    margin-left: 73px;
+  }
+}
+@media all and (max-width: 1099px) {
+  .content-in .player-box .pb-status {
+    margin: 0 auto;
+    width: 90%;
+    margin-top: 30px;
+  }
+}
+.content-in .player-box .pb-status .name-area {
+  margin-bottom: 30px;
+}
+.content-in .player-box .pb-status .name-area .name {
+  font-size: 22px;
+  font-weight: bold;
+}
+.content-in .player-box .pb-status .name-area .kana {
+  margin-bottom: 15px;
+}
+.content-in .player-box .pb-status .profile-area {
+  margin-bottom: 30px;
+}
+.content-in .player-box .pb-status .profile-area .tit {
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  position: relative;
+}
+@media all and (max-width: 1099px) {
+  .content-in .player-box .pb-status .profile-area .tit {
+    margin-left: 15px;
+  }
+}
+@media all and (max-width: 1099px) {
+  .content-in .player-box .pb-status .profile-area .tit:before {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: -15px;
+    border-top: 5px solid transparent;
+    border-left: 5px solid #fff;
+    border-bottom: 5px solid transparent;
+    border-right: 5px solid transparent;
+  }
+}
+.content-in .player-box .pb-status .history-area .tit {
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  position: relative;
+}
+@media all and (max-width: 1099px) {
+  .content-in .player-box .pb-status .history-area .tit {
+    margin-left: 15px;
+  }
+}
+@media all and (max-width: 1099px) {
+  .content-in .player-box .pb-status .history-area .tit:before {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: -15px;
+    border-top: 5px solid transparent;
+    border-left: 5px solid #fff;
+    border-bottom: 5px solid transparent;
+    border-right: 5px solid transparent;
+  }
+}
+.content-in .player-box .pb-status .history-area dl {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 10px;
+}
+@media all and (max-width: 766px) {
+  .content-in .player-box .pb-status .history-area dl {
+    display: block;
+    border-bottom: 1px solid #424242;
+    line-height: 2;
+    font-size: 11px;
+  }
+}
+.content-in .player-box .pb-status .history-area dt {
+  width: 10%;
+}
+@media all and (max-width: 766px) {
+  .content-in .player-box .pb-status .history-area dt {
+    width: auto;
+  }
+}
+.content-in .player-box .pb-status .history-area dd {
+  width: 90%;
+}
+.content-in .player-box .pb-status .history-area .editor_content ol {
+  list-style-type: decimal;
+  padding-left: 10px;
+}
+.content-in .player-box .pb-status .history-area .editor_content ul {
+  list-style-type: initial;
+  padding-left: 20px;
+}
+.content-in .player-box .pb-status .history-area .editor_content img {
+  max-width: 100%;
+  height: auto !important;
+}
+.content-in .player-box .pb-status .history-area .editor_content b,
+.content-in .player-box .pb-status .history-area .editor_content strong {
+  font-weight: bold;
+  font-size: inherit;
+}
+.content-in .player-box .pb-status .history-area .editor_content em {
+  font-style: italic;
+}
+.content-in .player-box .pb-status .history-area .editor_content a {
+  text-decoration: underline;
+}
+.content-in .player-box .pb-status .history-area .editor_content iframe {
+  max-width: 100%;
+}
+.content-in .player-box .pb-status .history-area .editor_content table {
+  border-color: rgba(0, 0, 0, 0);
+  border-collapse: collapse;
+}
+.content-in .player-box .pb-status .history-area .editor_content p {
+  margin-bottom: 1em;
+}
+.content-in .player-box .pb-status .history-area .editor_content table p {
+  margin-bottom: 0;
+}
+.content-in .player-box .pb-status .history-area .editor_content h1,
+.content-in .player-box .pb-status .history-area .editor_content h2,
+.content-in .player-box .pb-status .history-area .editor_content h3,
+.content-in .player-box .pb-status .history-area .editor_content h4,
+.content-in .player-box .pb-status .history-area .editor_content h5,
+.content-in .player-box .pb-status .history-area .editor_content h6 {
+  margin: inherit;
+}
+.content-in .player-box .pb-status .history-area .editor_content blockquote {
+  font-style: italic;
+  padding: 2px 20px 0 8px;
+  margin-left: 40px;
+  border-left: 5px solid #ccc;
+}
+.content-in .player-box .pb-status .history-area .editor_content td,
+.content-in .player-box .pb-status .history-area .editor_content th,
+.content-in .player-box .pb-status .history-area .editor_content tr {
+  margin: initial;
+}
+.content-in .player-box .pb-status .history-area .editor_box {
+  margin: auto;
+  line-height: 1.6;
+  font-size: 14px;
+  color: #fff;
+}
+@media (max-width: 767px) {
+  .content-in .player-box .pb-status .history-area .editor_box {
+    line-height: 1.666;
+    font-size: 13px;
+  }
+}
+.content-in .player-box .pb-status .history-area .editor_box ul,
+.content-in .player-box .pb-status .history-area .editor_box ol {
+  padding-left: 40px;
+}
+.content-in .player-box .pb-status .history-area .editor_box img {
+  max-width: 100%;
+  height: auto !important;
+}
+.content-in .player-box .pb-status .history-area .mo_use {
+  display: none;
+}
+@media (max-width: 767px) {
+  .content-in .player-box .pb-status .history-area .mo_use {
+    display: block;
+  }
+}
+@media (max-width: 767px) {
+  .content-in .player-box .pb-status .history-area .pc_use {
+    display: none;
+  }
+}
+.content-in .player-box .swiper-wrapper {
+  background: radial-gradient(#fff, #A6ABB7);
+  height: 100%;
+}
+.content-in .player-box .banner1 img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  margin: 0 auto;
+}
+.content-in .player-box .banner2 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.content-in .player-box .banner2 img {
+  display: block;
+  margin: 0 auto;
+  max-height: 100%;
+  position: absolute;
+  left: -63%;
+}

@@ -1,0 +1,268 @@
+@import "base/mixin";
+
+.breadcrumb{
+    // padding-top: 63px;
+    max-width: calc(100% - 80px);
+    margin: 0 auto;
+    display: flex;
+    margin-top: 63px;
+    height: 42px;
+    align-items: center;
+    color:#6f6f6f;
+    li{
+        margin-right: 10px;
+        &:last-child{
+            color:#000;
+        }
+    }
+    a{
+            color:#6f6f6f;
+    }
+}
+
+
+.title_en{
+    margin-top: 70px;
+    margin-bottom: 15px;
+    font-family: "Montserrat";
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1em;  
+    @include mediaquery(null,428px){
+        font-size: 16px;
+        //margin-top: 133px;
+        margin-top: 40px;
+        margin-bottom: 10px;
+    }
+}
+
+
+
+h1.read_jp{
+    text-align: center;
+    margin-bottom: 55px;
+    @include mediaquery(null,428px){
+        font-size: 13px;
+    }
+}
+
+span.title_line{
+    display: block;
+    width: 40px;
+    height: 2px;
+    background: #e74c3d;
+    margin: 0px auto 15px;
+    text-indent: -9999px;
+    @include mediaquery(null,428px){
+        width: 20px;
+        margin: 0px auto 8px;
+    }
+}
+
+
+
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    aspect-ratio : 1 / 0.46875;
+    // object-fit: contain;
+    object-fit: cover;
+  }
+
+  .swiper {
+    width: 100%;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .swiper-slide {
+    background-size: cover;
+    background-position: center;
+    
+
+  }
+
+
+
+  .mySwiper2 {
+    height: 80%;
+    width: 100%;
+    // height: 613px;
+    // height: calc(100vh - 243px);
+    .swiper-slide {
+        // position: relative;
+        img{
+            // position: absolute;
+            // top: 0;
+            // left: 0;
+        }
+    }
+  }
+
+  .mySwiper {
+    height: 20%;
+    box-sizing: border-box;
+    padding: 10px 0;
+    margin-top: 5px;
+    // margin-top: 618px;
+    max-width: 1545px;
+    
+  }
+
+  .mySwiper .swiper-slide {
+    // width: 25%;
+    // width: 150px !important;
+    width: 150px;
+    height: 100%;
+    // opacity: 0.4;
+  }
+
+  .mySwiper .swiper-slide-thumb-active {
+    opacity: 1;
+    border: 2px solid #e74c3d;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .show_info{
+    max-width: calc(100% - 80px);
+    margin: 0 auto;
+    padding-bottom: 126px;
+    p.side_title_en{
+        display: inline-block;  
+        margin-top: 40px;
+        font-family: "Montserrat";
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+   .side_title_line {
+        margin: 15px 0px 30px;
+        border-bottom: solid 1px #000;
+        position: relative;
+        &:after{
+            position: absolute;
+            content: " ";
+            display: block;
+            border-bottom: solid 1px #e74c3d;
+            bottom: -1px;
+            width: 10%;
+        }
+    }
+    .editor_content {
+        ol {
+            list-style-type: decimal;
+            padding-left: 10px;
+        }
+        ul {
+            list-style-type: initial;
+            padding-left: 20px;
+        }
+        img {
+            max-width: 100%;
+            height: auto !important;
+        }
+        b,
+        strong {
+            font-weight: bold;
+            font-size: inherit;
+        }
+        em {
+            font-style: italic;
+        }
+        a {
+            text-decoration: underline;
+        }
+        iframe {
+            max-width: 100%;
+        }
+            table{
+                border-color:rgba(0,0,0,0);
+                border-collapse: collapse;  //陰影
+            }
+            p{
+            margin-bottom: 1em;
+            }
+            table p{
+            margin-bottom: 0;
+        }
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin: inherit;
+        }
+        blockquote {
+            font-style: italic;
+            padding: 2px 20px 0 8px;
+            margin-left: 40px;
+            border-left: 5px solid #ccc;
+        }
+        td,
+        th,
+        tr {
+            margin: initial;
+        }
+    }
+    
+    //依照專案客製
+    .editor_box{
+        margin: auto;
+        line-height: 1.6;
+        font-size: pxToEm(18);
+        // color: #5c5d5d;
+        color:#000;
+        @media (max-width: 767px) {
+            line-height: 1.666;
+            font-size: pxToEm(15);
+        }
+        ul,
+        ol {
+            padding-left: 40px;
+        }
+    
+        img {
+            max-width: 100%;
+            height: auto !important;
+        }
+        //有需要再加
+        // .tbcolor{
+        //      border-collapse: collapse;
+        //  }
+    }
+    
+    .mo_use {
+        display: none;
+        @media (max-width: 767px) {
+            display: block;
+        }
+    }
+    .pc_use {
+        @media (max-width: 767px) {
+            display: none;
+        }
+    }
+  }

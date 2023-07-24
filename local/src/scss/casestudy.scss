@@ -1,0 +1,237 @@
+@import "base/mixin";
+
+.breadcrumb{
+    // padding-top: 63px;
+    max-width: calc(100% - 80px);
+    margin: 0 auto;
+    display: flex;
+    margin-top: 63px;
+    height: 42px;
+    align-items: center;
+    color:#6f6f6f;
+    @include mediaquery(null,468px){
+        display: none;
+    }
+    li{
+        margin-right: 10px;
+        &:last-child{
+            color:#000;
+        }
+    }
+    
+    a{
+            color:#6f6f6f;
+    }
+}
+
+
+
+.title_en{
+    margin-top: 70px;
+    margin-bottom: 15px;
+    font-family: "Montserrat";
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1em;  
+    @include mediaquery(null,428px){
+        //margin-top: 133px;
+        margin-top: 40px;
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+}
+
+h1.read_jp{
+    text-align: center;
+    margin-bottom: 55px;
+    @include mediaquery(null,428px){
+        font-size: 13px;
+    }
+}
+
+span.title_line{
+    display: block;
+    width: 40px;
+    height: 2px;
+    background: #e74c3d;
+    margin: 0px auto 15px;
+    text-indent: -9999px;
+    @include mediaquery(null,428px){
+        width: 20px;
+        margin: 0px auto 8px;
+    }
+}
+
+
+.editor_content {
+    ol {
+        list-style-type: decimal;
+        padding-left: 10px;
+    }
+    ul {
+        list-style-type: initial;
+        padding-left: 20px;
+    }
+    img {
+        max-width: 100%;
+        height: auto !important;
+    }
+    b,
+    strong {
+        font-weight: bold;
+        font-size: inherit;
+    }
+    em {
+        font-style: italic;
+    }
+    a {
+        text-decoration: underline;
+    }
+    iframe {
+        max-width: 100%;
+    }
+		table{
+			border-color:rgba(0,0,0,0);
+			border-collapse: collapse;  //陰影
+		}
+		p{
+        margin-bottom: 1em;
+		}
+		table p{
+        margin-bottom: 0;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin: inherit;
+    }
+    blockquote {
+        font-style: italic;
+        padding: 2px 20px 0 8px;
+        margin-left: 40px;
+        border-left: 5px solid #ccc;
+    }
+    td,
+    th,
+    tr {
+        margin: initial;
+    }
+}
+
+//依照專案客製
+.editor_box{
+    margin: auto;
+    max-width: calc(100% - 80px);
+    margin: 0 auto;
+    margin-bottom: 72px;
+    line-height: 1.6;
+    // font-size: pxToEm(18);
+    font-size: 14px;
+    color: #000;
+    @media (max-width: 767px) {
+        line-height: 1.666;
+        // font-size: pxToEm(15);
+        font-size: 13px;
+    }
+    ul,
+    ol {
+        padding-left: 40px;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto !important;
+    }
+    //有需要再加
+    // .tbcolor{
+    //      border-collapse: collapse;
+    //  }
+}
+
+.mo_use {
+    display: none;
+    @media (max-width: 767px) {
+        display: block;
+    }
+}
+.pc_use {
+    @media (max-width: 767px) {
+        display: none;
+    }
+}
+
+.casestudy-wrap{
+    max-width: calc( 100% - 100px );
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-bottom: 120px;
+    @include mediaquery(null,$sm){
+        max-width: calc( 100% - 30px );
+        padding-bottom: 70px;
+    }
+    a{
+        display: block;
+        width: 24%;
+        background: #f4f6f7;
+        cursor: pointer;
+        padding: 30px;
+        transition: 0.3s;
+        margin-top: 20px;
+        text-decoration: none;
+        color: #3b3c3d;
+        @include mediaquery(null,1025px){
+            width: 49%;
+        }
+        @include mediaquery(null,$md){
+            width: 100%;
+        }
+        .case-cap{
+            display: inline-block;
+            padding: 8px 10px;
+            margin-bottom: 20px;
+            background: #3b3c3d;
+            color: #fff;
+            font-weight: normal;
+        }
+        .case-cap-cat{
+            display: inline-block;
+            padding: 8px 10px;
+            margin-bottom: 20px;
+            background: #fff;
+            color: #3b3c3d;
+            border: 1px solid #3d3c3d;
+            font-weight: normal;
+            margin-left: 10px;
+            @include mediaquery(null,1143px){
+                margin-left: 0;
+            }
+        }
+        h3{
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .case-img{
+            margin-top: 15px;
+            img{
+                max-width: 100%;
+            }
+        }
+        &:hover{
+
+                @include mediaquery($lg,null){
+            color: #3b3c3d;
+            background: #dbdbdb;
+            transition: 0.3s;
+            }
+        }
+        p{
+            margin-top: 15px;
+        }
+    }
+}

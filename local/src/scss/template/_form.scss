@@ -1,0 +1,194 @@
+.formtable{   
+    font-family: $fontfix;
+    letter-spacing: 0.025em;
+    input,select,textarea{
+        background:none;
+        outline: none;
+        appearance: none;
+        box-shadow:none;
+        border:none;
+        border-bottom: 1px solid $color0;
+        background-color: #f5f5f5;
+        width:100%;
+        font-family: $fontfix;
+        @include border(0);
+        @include font-size(pxToRem(15),pxToRem(16));
+        &:focus { outline: none; }
+        @include font-color($color3,400,1.5);
+        vertical-align: middle;   
+        padding:0.6em 0.8em; 
+        // @include mediaquery(null,$sm){
+        //     padding:0.7em 0.7em;
+        // }
+        // @include mediaquery($sm,null){      
+        //     padding:0.6em 0.8em;   
+        // }
+        &.checkbg.active{
+            background-color: white;
+        } 
+    }   
+    textarea{
+        /* width */
+        &::-webkit-scrollbar {
+            width: 2px;
+        }        
+        /* Track */
+        &::-webkit-scrollbar-track {
+            background: #d8d8d8;
+        }
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+            background: $color0; 
+        }
+    }
+    @include placeholder {
+        color:#b6b6b6;
+        font-family: $text;
+    }    
+    //select
+    // select::-ms-expand { display: none; }    
+    // @media screen\0 {
+    //     select{
+    //         background:url('../svg/select_down_bk.svg')  no-repeat calc(100% - 20px) 50% / 1.2em;
+    //     }  
+    // }  
+    // select{
+    //     color:#777;
+    //     background:url('../svg/select_down_bk.svg') no-repeat calc(100% - 20px) 50% / 1.2em;
+    //     @include mediaquery(null,$sm){
+    //         background-position: calc(100% - 10px) 50%;
+    //         background-size: 0.8em;
+    //     }
+    // }  
+    .check_radi {
+        width: auto;
+        position: relative;
+        cursor: pointer;
+        user-select: none;
+        line-height: 1.2;
+        display: flex;
+        align-items: center;
+        input[type="checkbox"],input[type="radio"]{
+            @include position(absolute,$top:0,$left:0);
+            opacity: 0;
+            cursor: pointer;
+            z-index: 5;
+            width: 100%;
+            height: 100%;
+            margin:0;
+        }
+        .boxmark {
+            @include position(absolute,$top:50%,$left:50%);
+            height: 20px;
+            width: 20px;
+            border:1px solid #777;
+            @include border();
+            @include mediaquery(null,$sm){
+                transform: translate(-50%,-50%) scale(0.7);
+                transform-origin: left;
+            }
+            @include  mediaquery($sm,null){
+                transform: translate(-50%,-50%);
+            }
+        }
+        .boxmark:after {
+            content: "";
+            @include position(absolute,$top:50%,$left:50%);
+            transform: translate(-50%,-50%);
+            display: none;
+            width: 10px;
+            height: 10px;
+            background: $color0;
+            @include border();
+        }
+        input:checked~.boxmark:after {
+            display: block;
+        }
+        .checkmark {
+            @include position(absolute,$top:50%,$left:0);
+            height: 20px;
+            width: 20px;
+            border:2px solid $color0;
+            @include mediaquery(null,$sm){
+                transform: translateY(-50%) scale(0.8);
+                transform-origin: left;
+            }
+            @include  mediaquery($sm,null){
+                transform: translateY(-50%);
+            }
+        }
+        .checkmark:after {
+            content: "";
+            @include position(absolute,$top:1px,$left:3px);
+            display: none;
+            width: 20px;
+            height: 14px;
+            background: url('../images/agree_yes.png') no-repeat center / contain ;
+        }
+        input:checked~.checkmark:after {
+            display: block;
+        }
+    } 
+    label{
+        position: relative;
+        display: block;
+        width: 8em;
+        padding-top: 0.5em;
+    }
+    label i{
+        color:$color1;
+    }
+    .form-group{
+        @include mediaquery(null,$md){
+            margin-bottom: 1.4em;
+            label{
+                margin-bottom: 0.8em;
+            }
+        }
+        @include mediaquery($md,null){ 
+            margin-bottom: 2em;
+            display: flex;
+            flex-wrap: wrap;    
+            > div:nth-child(2){
+                flex:1;
+            }     
+            
+        }
+        @include mediaquery($lg,null){         
+            &.w50{
+                flex:0 0 48%;
+            }             
+            &.w30{
+                flex:0 0 25%;
+                max-width: 25%;
+            }
+            &.w90{
+                flex:0 0 74%;
+                max-width: 74%;
+            }
+            &:not(.w50,.w30,.w90){
+                flex:0 0 100%;
+                width: 100%;
+            }  
+        }
+    }    
+    .required{
+        &.with-errors{
+            input,textarea{
+                background:rgba($color1,0.1);
+            }
+        }
+        .required-txt{
+            @include font-size(pxToRem(13),pxToRem(14));
+            @include font-color($color0,400,1.5);
+            margin-top: 0.4em;
+            min-height: 1.5em;
+            display:inline-block;
+        }
+        @include mediaquery(null,$lg){
+            .required-txt{
+                display: none;
+            }
+        }
+    }
+}

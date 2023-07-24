@@ -1,0 +1,325 @@
+@import "base/mixin";
+
+main{
+    width: 100%;
+    background-color: rgb(0,0,0);
+    .wrapper{
+        width: 100%;
+    }
+}
+
+
+
+.breadcrumb{
+    // padding-top: 63px;
+    max-width: calc(100% - 80px);
+    margin: 0 auto;
+    display: flex;
+    margin-top: 63px;
+    height: 42px;
+    align-items: center;
+    color:#fff;
+    @include mediaquery(null,$sm){
+        display: none;
+    }
+    li{
+        margin-right: 10px;
+        &:last-child{
+            color:#fff;
+        }
+    }
+    a{
+            color:#b4b4b4;
+    }
+}
+
+.banner{
+    width: 100%;
+    img{
+        max-width: 100%;
+    }
+    // @include mediaquery(null,$sm){
+    //     margin-top: 63px;
+    // }
+
+}
+
+h3{
+    margin-top: 85px;
+    font-size: 34px;
+font-family: 'Noto Sans JP', sans-serif;
+font-weight: bold;
+text-align: center;
+color: #fff;
+margin-bottom: 85px;
+}
+
+.content-in{
+    max-width: 1200px;
+    margin: 0 auto;
+    color:#fff;
+    padding-bottom: 77px;
+    @include mediaquery(null,1360px){
+        max-width: 100%;
+    }
+
+    .player-box{
+        // width: 520px;
+        // height: 520px;
+        display: flex;
+        justify-content: space-between;
+        @include mediaquery(1100px,1360px){
+            justify-content: center;
+        }
+        @include mediaquery(1100px,1360px){
+            max-width: 90%;
+            margin: 0 auto;
+        }
+        @include mediaquery(null,1100px){
+            flex-direction: column;
+        }
+        .pb-img{
+            .swiper{
+                width: 520px;
+                height: 520px;
+                @include mediaquery(null,1360px){
+                    width: 420px;
+                    height: 420px;
+                }
+                @include mediaquery(420px,1360px){
+                    max-width: 100%;
+                }
+                @include mediaquery(null,420px){
+                    width: 100vw;
+                    height: 100vw;
+                }
+            }
+            
+        }
+        .pb-status{
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            @include mediaquery(1100px,1360px){
+                margin-left: 73px;
+            }
+            @include mediaquery(null,1100px){
+                margin: 0 auto;
+                width: 90%;
+                margin-top: 30px;
+            }
+            .name-area{
+                margin-bottom: 30px;
+                .name{
+                    font-size: 22px;
+                    font-weight: bold;
+                }
+                .kana{
+                    margin-bottom: 15px;
+                }
+            }
+
+            .profile-area{
+                margin-bottom: 30px;
+                .tit{
+                    font-size: 15px;
+	font-weight: bold;
+	margin-bottom: 15px;
+    position: relative;
+    @include mediaquery(null,1100px){
+        margin-left: 15px;
+    }
+    &:before {
+        @include mediaquery(null,1100px){
+            content: '';
+            position: absolute;
+        top: 6px;
+        left: -15px;
+        border-top: 5px solid transparent;
+        border-left: 5px solid #fff;
+        border-bottom: 5px solid transparent;
+        border-right: 5px solid transparent;
+        }
+        
+        
+    }
+                }
+            }
+            .history-area {
+                .tit{
+                    font-size: 15px;
+                    font-weight: bold;
+                    margin-bottom: 15px;
+                    position: relative;
+                    @include mediaquery(null,1100px){
+                        margin-left: 15px;
+                    }
+                    &:before {
+                        @include mediaquery(null,1100px){
+                            content: '';
+                            position: absolute;
+                        top: 6px;
+                        left: -15px;
+                        border-top: 5px solid transparent;
+                        border-left: 5px solid #fff;
+                        border-bottom: 5px solid transparent;
+                        border-right: 5px solid transparent;
+                        }
+                        
+                        
+                    }
+                }
+                dl{
+                    display: flex;
+                    margin-bottom: 10px;
+                    @include mediaquery(null,767px){
+                        display: block;
+                        border-bottom: 1px solid #424242;
+                        line-height: 2;
+                        font-size: 11px;
+                    }
+                }
+                dt{
+                    width: 10%;
+                    @include mediaquery(null,767px){
+                        width: auto;
+                    }
+                }
+                dd{
+                    width: 90%;
+                }
+                .editor_content {
+                    ol {
+                        list-style-type: decimal;
+                        padding-left: 10px;
+                    }
+                    ul {
+                        list-style-type: initial;
+                        padding-left: 20px;
+                    }
+                    img {
+                        max-width: 100%;
+                        height: auto !important;
+                    }
+                    b,
+                    strong {
+                        font-weight: bold;
+                        font-size: inherit;
+                    }
+                    em {
+                        font-style: italic;
+                    }
+                    a {
+                        text-decoration: underline;
+                    }
+                    iframe {
+                        max-width: 100%;
+                    }
+                        table{
+                            border-color:rgba(0,0,0,0);
+                            border-collapse: collapse;  //陰影
+                        }
+                        p{
+                        margin-bottom: 1em;
+                        }
+                        table p{
+                        margin-bottom: 0;
+                    }
+                    h1,
+                    h2,
+                    h3,
+                    h4,
+                    h5,
+                    h6 {
+                        margin: inherit;
+                    }
+                    blockquote {
+                        font-style: italic;
+                        padding: 2px 20px 0 8px;
+                        margin-left: 40px;
+                        border-left: 5px solid #ccc;
+                    }
+                    td,
+                    th,
+                    tr {
+                        margin: initial;
+                    }
+                }
+                
+                //依照專案客製
+                .editor_box{
+                    margin: auto;
+                    line-height: 1.6;
+                    // font-size: pxToEm(18);
+                    font-size: 14px;
+                    // color: #5c5d5d;
+                    color: #fff;
+                    @media (max-width: 767px) {
+                        line-height: 1.666;
+                        // font-size: pxToEm(15);
+                        font-size: 13px;
+                    }
+                    ul,
+                    ol {
+                        padding-left: 40px;
+                    }
+                
+                    img {
+                        max-width: 100%;
+                        height: auto !important;
+                    }
+                    //有需要再加
+                    // .tbcolor{
+                    //      border-collapse: collapse;
+                    //  }
+                }
+                
+                .mo_use {
+                    display: none;
+                    @media (max-width: 767px) {
+                        display: block;
+                    }
+                }
+                .pc_use {
+                    @media (max-width: 767px) {
+                        display: none;
+                    }
+                }
+                
+            }
+        }
+        .swiper-wrapper{
+            background: radial-gradient(#fff,#A6ABB7);
+            height: 100%;
+        }
+        .banner1{
+            // background-image: url('../images/player_yamagishi.png');
+            // width: 520px;
+            // height: 520px;
+            // background-size: cotain;
+            // background-position: center center;
+            img{
+                max-width: 100%;
+                max-height: 100%;
+                display: block;
+                margin: 0 auto;
+            }
+        }
+        .banner2{
+            // background-image: url('../images/player_yamagishi_2.jpg');
+            width: 100%;
+            height: 100%;
+            position: relative;
+            img{
+                display: block;
+                margin: 0 auto;
+                max-height:100%;
+                position: absolute;
+                left: -63%;
+            }
+            // background-size: cover;
+            // background-position: center center;
+        }
+
+    }
+}

@@ -1,0 +1,215 @@
+
+@import "variable";
+//-------------------------效果定義-------------------------//
+// /*
+//   media query 如果不用bootstrap
+//   @include mediaquery(null,$sm){} -->media-breakpoint-down
+//   @include mediaquery($sm,null){} -->media-breakpoint-up
+//   @include mediaquery($sm,$lg){} -->media-breakpoint-between
+// */
+$xxl:1440px;
+$mb:1237px;
+$xl:1200px;
+$lg:991px;
+$md:769px;
+$sm:576px;
+$xs:320px;
+@mixin mediaquery($min,$max) {
+  @if $min != null and $max != null {
+    @media all and (min-width:$min) and (max-width: $max - 1) {
+      @content;
+    }
+  } @else if $max == null {
+    @media all and (min-width:$min) {
+      @content;
+    }
+  } @else if $min == null {
+    @media all and (max-width: $max - 1) {
+      @content;
+    }
+  }
+}
+//圓角
+@mixin border($bo:99em){
+  -webkit-border-radius: $bo;
+  -moz-border-radius: $bo;
+  border-radius: $bo;
+}
+// 字型大小顏色
+@mixin font-color($color,$weight:400,$lh:1.5) {
+  color:$color;
+  font-weight: $weight;
+  line-height: $lh;
+}
+//px轉rem
+@function pxToEm($px, $base: 16) { 
+  @return ($px / $base) * 1em; 
+}
+@function pxToRem($px, $base: 16) { 
+  @return ($px / $base) * 1rem; 
+}
+//用法 @include font-size(pxToEm(16),pxToEm(36));
+@mixin font-size($mobile,$desk) {
+  @include mediaquery(null,$sm){
+    font-size: $mobile;
+  }
+  @include mediaquery($sm,null){
+    font-size: $desk;
+  }
+}
+@mixin f-letter($mobile,$desk){  
+  @include mediaquery(null,$sm){
+    letter-spacing: $mobile;
+  }
+  @include mediaquery($sm,null){
+    letter-spacing: $desk;
+  }
+}
+//漸層色 //@include gradient(left,(#b89109,#ffee9d));
+@mixin gradient($angle, $list) { 
+  // background: -webkit-linear-gradient($angle, $list);
+  // background: -moz-linear-gradient($angle, $list);
+  // background: -o-linear-gradient($angle, $list);
+  background: linear-gradient(to $angle, $list);  
+}
+
+//動畫
+@mixin keyframes($animationName) {
+  @-webkit-keyframes #{$animationName} {
+      @content;
+  }
+  @-moz-keyframes #{$animationName} {
+      @content;
+  }
+  @-o-keyframes #{$animationName} {
+      @content;
+  }
+  @keyframes #{$animationName} {
+      @content;
+  }
+}
+// /*
+// @keyframes gradeffect {
+//   0% {
+//     background-position: top left;
+//   }
+//   100% {
+//     background-position: top right;
+//   }
+// }
+// */
+
+//placeholder
+@mixin placeholder {
+  ::-webkit-input-placeholder {@content;}
+  :-moz-placeholder           {@content;}
+  ::-moz-placeholder          {@content;}
+  :-ms-input-placeholder      {@content;}
+}
+
+// @include box-shadow(12px 12px 0 $blue_u);
+@mixin box-shadow($shadow...){ 
+  -webkit-box-shadow:$shadow; 
+  -moz-box-shadow:$shadow; 
+  box-shadow:$shadow; 
+}
+
+//限定行數  行高 行數(行高x行數)x1rem
+@mixin clamp($lh,$clamp){
+  height: ($lh*$clamp) * 1em;
+  line-height: $lh;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $clamp; /* 第幾行要顯示點點點 */
+  -webkit-box-orient: vertical;
+}
+
+//定位
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null){
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+
+//使用 .text-hide 來維持標籤的親和性及 SEO，但要使用 background-image 取代文字內容。 // @include text-hide();
+@mixin text-hide() {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+//triangle 三角形 方向 尺寸 顏色
+@mixin triangle($direction, $size, $borderColor ) { 
+  content:""; 
+  height: 0;
+  width: 0; 
+  @if $direction == top { 
+    border-bottom:$size solid $borderColor; 
+    border-left:$size dashed transparent; 
+    border-right:$size dashed transparent; 
+  } @else if $direction == right { 
+    border-left:$size solid $borderColor; 
+    border-top:$size dashed transparent; 
+    border-bottom:$size dashed transparent; 
+  } @else if $direction == bottom { 
+    border-top:$size solid $borderColor; 
+    border-left:$size dashed transparent; 
+    border-right:$size dashed transparent; 
+  } @else if $direction == left { 
+    border-right:$size solid $borderColor; 
+    border-top:$size dashed transparent; 
+    border-bottom:$size dashed transparent; 
+  } 
+}
+@mixin triangle_specially($direction, $height , $width, $borderColor){
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  @if $direction == left_top{ //左上
+      border-width: $height $width 0 0;
+      border-color: $borderColor transparent transparent transparent;
+  } @else if  $direction == left_bottom{ //左下
+      border-width: $height 0 0   $width;
+      border-color: transparent transparent transparent $borderColor;
+  } @else if  $direction == right_top{ //右上
+      border-width: 0 $width  $height  0;
+      border-color: transparent $borderColor  transparent transparent;
+  } @else if  $direction == right_bottom{ //右下
+      border-width: 0 0 $height  $width;
+      border-color: transparent transparent $borderColor transparent;
+  } @else if  $direction == right_r { //右
+      border-width: $height 0 $height $width;
+      border-color: transparent transparent transparent $borderColor;
+  } @else if  $direction == left_f { //左
+      border-width: $height $width $height 0;
+      border-color: transparent $borderColor transparent transparent;
+  }
+}
+//等腰三角形
+@mixin triangle_sosceles($direction, $height , $width, $borderColor){
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  @if $direction == top{ //上
+    border-width: 0 $width $height $width;
+    border-color: transparent transparent $borderColor;
+  } @else if  $direction == bottom{ //下
+    border-width: $height $width 0 $width;
+    border-color:  $borderColor transparent transparent 
+  }@else if  $direction == left{ //左
+    border-width: $height $width $height 0;
+    border-color: transparent $borderColor transparent transparent;
+  }@else if  $direction == right{ //右
+    border-width: $height 0 $height $width;
+    border-color: transparent transparent transparent $borderColor;
+  }
+}
+

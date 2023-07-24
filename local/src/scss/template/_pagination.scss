@@ -1,0 +1,66 @@
+.page{
+    @include font-size(pxToEm(16),pxToEm(20));
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    a{
+      @include font-color($color2,500,1.5);
+      display: block;
+      position: relative;
+      background-color: rgba($color0,0);
+    }
+    dt a{
+      // display: block;
+      // position: relative;
+      // width: 30px;
+      // height: 30px;
+      // padding-top: 10px;
+      // &:before{
+      //   display: block;
+      // }
+    }
+    .svg{
+        stroke:$color2;
+        transition: stroke 0.6s;
+        width: 10px;
+    }
+    //當前
+    .active a{
+      color: white;
+      background-color: rgba($color0,1);
+    }
+    @include mediaquery(null,$md){
+      dd{
+        margin:0 9px;
+      }  
+      dt{
+        padding-top: 5px;
+      }
+      a{
+        min-width: 40px;
+        line-height: 40px;
+        height: 40px;
+      }
+    }
+    @include mediaquery($md,null){
+      dd{
+        margin:0 30px;
+      }
+      dt{
+        margin:0 36px;
+      }
+      a{
+        min-width: 30px;
+        height: 30px;
+      }
+      dd a:hover{
+        color:white;
+        background-color: rgba($color0,1);       
+      }
+      dt a:hover .svg{
+        stroke: $color0;
+      }
+    }
+  }

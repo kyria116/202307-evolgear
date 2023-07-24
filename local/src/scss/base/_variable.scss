@@ -1,0 +1,28 @@
+
+
+$mfont: 'Noto Sans TC', sans-serif;
+$text: 'Noto Sans TC', sans-serif;
+$fontfix: 'Rubik','Noto Sans TC', sans-serif;
+$fen: 'Rubik', sans-serif;
+
+// font-family: 'Heebo', sans-serif;
+
+$color0:#e60036;
+$color1:#fff100;
+$color2:#ed7d64;
+$color3:#0b0b4c;
+$color4:#f4e7ae;
+
+$maxConentW: 1232px;
+
+$headH-pc:100px;
+$headH-md:70px;
+$headH-mo:50px;
+
+
+$pdr-pc:16px;
+$pdr-mo:25px;
+
+.fontfix{
+    font-family: $fontfix;   
+}
