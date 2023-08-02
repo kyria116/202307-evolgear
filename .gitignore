@@ -1,0 +1,13 @@
+#dominator
+**/web/dominator/*
+!**/web/dominator/paging
+!**/web/dominator/control
+!**/web/dominator/index.php
+!**/web/dominator/system
+
+#dominator/paging
+web/dominator/paging/ckeditor
+web/dominator/paging/ckfinder
+
+web/plug_in
+web/pdfdownload
