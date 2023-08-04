@@ -93,7 +93,7 @@ include '../quote/head.php';
 			);
 		} else if ($page_id == 5) {
 			$group_array = array(
-				array("img", "圖片", $img_name_c, "1", "1920", "1080"),
+				array("img", "圖片", $img_name_c, "1", "1920", "900"),
 			);
 		} else if ($page_id == 6) {
 			$group_array = array(

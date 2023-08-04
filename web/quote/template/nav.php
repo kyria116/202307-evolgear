@@ -25,6 +25,14 @@
 							<?php foreach ($product_class_menu[1] as $k => $v) { ?>
 								<li class="product-series-2">
 									<a href="./product-series.php?id=<?php echo $k; ?>" class="menu-h"><?php echo $v["pc_title_tw"]; ?></a>
+									<ol>
+										<li><a href="./product-list.php">配重片系列</a></li>
+										<li><a href="">槓片系列</a></li>
+										<li><a href="">纜繩滑輪機</a></li>
+										<li><a href="">多功能重量訓練架</a></li>
+										<li><a href="">訓練架&amp;訓練椅</a></li>
+										<li><a href="">綜合訓練架</a></li>
+									</ol>
 								</li>
 							<?php } ?>
 						</ol>

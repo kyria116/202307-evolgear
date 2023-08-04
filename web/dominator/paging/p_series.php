@@ -68,6 +68,7 @@ include '../quote/head.php';
 								<thead>
 									<tr>
 										<th><?php echo $cms_lang[21][$language]; ?></th>
+										<th>系列介紹編修</th>
 										<th>標題</th>
 									</tr>
 								</thead>
@@ -79,13 +80,17 @@ include '../quote/head.php';
 											<tr>
 												<td style="text-align: center; vertical-align: middle;" width="15%" id="td_img">
 													<div class="btn-group">
-														<button style="margin-right: 10px;" class="btn btn-xs btn-info" onclick="location.href='<?php echo $db_name; ?>_update.php?id=<?php echo (int) $v[$id_name]; ?>'">基本資訊</button>
-														<button style="margin-right: 10px;" class="btn btn-xs btn-info" onclick="location.href='p_class.php?id=<?php echo (int) $v[$id_name]; ?>'">系列產品</button>
-														<button style="margin-right: 10px;" class="btn btn-xs btn-info" onclick=" javascript:location.href='essay.php?id=<?php echo $v[$id_name]; ?>' ;">區塊資訊</button>
-														<button class="btn btn-xs btn-info" onclick=" javascript:location.href='image.php?page_id=2&id=<?php echo $v[$id_name]; ?>' ;">圖片管理</button>
+														<button style="margin-right: 10px;" class="btn btn-xs btn-info" onclick="location.href='p_class.php?id=<?php echo (int) $v[$id_name]; ?>'">下層資料</button>
 													</div>
 												</td>
-												<td style="text-align: center; vertical-align: middle; word-break:break-all;" width="40%">
+												<td style="text-align: center; vertical-align: middle;" width="20%" id="td_img">
+													<div class="btn-group">
+														<button style="margin-right: 10px;" class="btn btn-xs btn-info" onclick="location.href='<?php echo $db_name; ?>_update.php?id=<?php echo (int) $v[$id_name]; ?>'">SEO編修</button>
+														<button style="margin-right: 10px;" class="btn btn-xs btn-info" onclick=" javascript:location.href='essay.php?id=<?php echo $v[$id_name]; ?>' ;">內容編輯</button>
+														<button class="btn btn-xs btn-info" onclick=" javascript:location.href='image.php?page_id=2&id=<?php echo $v[$id_name]; ?>' ;">BANNER輪播</button>
+													</div>
+												</td>
+												<td style="text-align: center; vertical-align: middle; word-break:break-all;" width="65%">
 													<?php echo html_decode($v[$title_name_en] . ' / ' . $v[$title_name]); ?>
 												</td>
 											</tr>

@@ -15,7 +15,7 @@ $query = "SELECT i_img_c,i_img_m,i_url  FROM `image` WHERE i_page = 2 AND relate
 $banner_data = sql_data($query, $link);
 
 //區塊說明
-$query = "SELECT e_title,e_ctext,e_mtext,e_img AS e_template FROM `essay` WHERE e_page = 2 AND id = $id AND e_status = 1";
+$query = "SELECT e_title,e_ctext,e_mtext,e_img AS e_template FROM `essay` WHERE e_page = 2 AND id = $id AND e_status = 1 ORDER BY e_order";
 $essay_data = sql_data($query, $link);
 
 //系列分類產品
@@ -65,7 +65,7 @@ include "quote/template/head.php";
             </div>
 
             <?php foreach ($essay_data as $k => $v) { ?>
-                <div class="<?php echo ($v["e_template"] == 0) ? "section1" : "section2"; ?>">
+                <div class="<?php echo ($v["e_template"] == 0) ? "section2" : "section1"; ?>">
                     <div class="editor_content">
                         <div class="editor_box pc_use">
                             <?php echo html_decode($v["e_ctext"]); ?>

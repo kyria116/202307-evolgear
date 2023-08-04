@@ -13,9 +13,8 @@
     <meta name="author" content="<?php echo $meta_data[4]["d_text"]; ?>">
     <meta name="copyright" content="<?php echo $meta_data[5]["d_text"]; ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <meta property="og:image" content="dist/images/og.jpg">
+    <meta property="og:image" content="<?php echo $url_set . $_SERVER['HTTP_HOST']; ?>/dist/images/evolgear_ogp_image.jpg">
     <meta name="format-detection" content="telephone=no">
     <link rel="shortcut icon" href="dist/images/16x16.ico" type="image/x-icon" />
     <title><?php echo $title_var; ?></title>
     <link rel="stylesheet" href="dist/css/main.css">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> -->

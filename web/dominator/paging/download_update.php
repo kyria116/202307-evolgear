@@ -156,6 +156,20 @@ include '../quote/head.php';
 			}
 		};
 
+		$('input#file_id1').change(ValidateFileSize);
+
+		function ValidateFileSize() {
+			if (window.FileReader && window.Blob) {
+				var FileSize = this.files[0].size / 1024 / 1024; // in MB
+				if (FileSize > 16) {
+					alert('上傳檔案大小不得超過 16 MB！');
+					this.value = "";
+				} else {
+
+				}
+			}
+		}
+
 		function doupdate() {
 			if (cropper.length) {
 				var img = [];

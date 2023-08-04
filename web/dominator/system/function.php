@@ -181,7 +181,7 @@ function group($class, $field_title, $field_name, $field_data = "", $field_place
 									<span class='filebn'><em>+</em>選擇 $field_title</span> 
 									<input class='filePrew' tabindex='3' type='file' name='$field_name' id='file_id$field_placeholder' size='3' accept='$field_width' onchange='file_upload($type,$field_placeholder);'>
 								</a>
-								<span id='filename$field_placeholder'>尚未選擇 $field_title 【檔案上傳限制大小為10M，檔案過大時檔案將無法更換】</span>
+								<span id='filename$field_placeholder'>尚未選擇 $field_title 【檔案上傳限制大小為16M，檔案過大時檔案將無法更換】</span>
 							</div>
 						</div>";
 			break;

@@ -32,6 +32,10 @@ if ($Authenticate == true) {
 	}
 
 	foreach ($_FILES as $key => $value) { //將post過來的參數取出
+
+		if ($value["size"] > 16777216) {
+			goto check_file_size;
+		}
 		if ($value["name"] != "") { //確認是否有檔案傳入
 			if ($fields != "") { //確認是否是第一個參數
 				$fields .= ","; //如果不是就在字串中加上逗號
@@ -85,6 +89,7 @@ if ($Authenticate == true) {
 					$value = $time . $sub_name; //重新為檔案命名
 					move_uploaded_file($file_url, $file_dir . $value); //上傳檔案
 				} else {
+					check_file_size:
 					echo "<script>alert('檔案過大無法上傳成功，請確認檔案大小');;history.go(-1);</script>"; //執行導頁或輸出訊息後導頁
 					exit();
 				}

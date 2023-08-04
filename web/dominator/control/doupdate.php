@@ -29,6 +29,9 @@ if ($Authenticate == true) {
 		}
 	}
 	foreach ($_FILES as $key => $value) { //將post過來的參數取出
+		if ($value["size"] > 16777216) {
+			goto check_file_size;
+		}
 		if ($value["name"] != "") { //確認是否有檔案傳入
 			if ($sqlstr != "") $sqlstr .= ","; //確認是不是第一個參數，如果不是就在字串中加上逗號
 			$time = date("Y_m_d_His") . $file_count; //設定字串為日期加時間，用於檔案名稱
@@ -69,7 +72,6 @@ if ($Authenticate == true) {
 						exit();
 					}
 					if (move_uploaded_file($file_url, "../../pdfdownload/" . $value["name"])) { //確認上傳檔案是否成功
-
 						$search_row = $link->prepare("SELECT $key FROM `$db` WHERE $id_name = $id"); //執行sql語法
 						$search_row->execute();
 						$row = $search_row->fetch(PDO::FETCH_NUM);
@@ -92,6 +94,7 @@ if ($Authenticate == true) {
 						@unlink("../../upload/$row[0]"); //刪除檔案
 					}
 				} else {
+					check_file_size:
 					echo "<script>alert('檔案過大無法上傳成功，請確認檔案大小');history.go(-1);</script>"; //執行導頁或輸出訊息後導頁
 					exit();
 				}

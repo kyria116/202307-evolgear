@@ -137,6 +137,19 @@ include '../quote/head.php';
 				}
 			}
 		};
+		$('input#file_id2').change(ValidateFileSize);
+
+		function ValidateFileSize() {
+			if (window.FileReader && window.Blob) {
+				var FileSize = this.files[0].size / 1024 / 1024; // in MB
+				if (FileSize > 16) {
+					alert('上傳檔案大小不得超過 16 MB！');
+					this.value = "";
+				} else {
+
+				}
+			}
+		}
 		//	     		新增
 		function doadd() {
 			if (cropper.length) {

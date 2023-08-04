@@ -130,7 +130,7 @@ include '../quote/head.php';
 					break;
 				case 5:
 					$group_array = array(
-						array("img", "圖片", $img_name_c, "1", "1920", "1080"),
+						array("img", "圖片", $img_name_c, "1", "1920", "900"),
 					);
 					break;
 				case 6:
