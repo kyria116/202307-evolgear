@@ -131,7 +131,7 @@
     </main>
     <?php
     include "quote/template/footer.php";
-    // include "quote/template/top_btn.php";
+
     ?>
     
     <script src="dist/js/jquery_min.js"></script>
@@ -156,7 +156,7 @@
         },
         });
     </script>
-    <!-- <script src="dist/js/index.js"></script> -->
+
 </body>
 
 </html>

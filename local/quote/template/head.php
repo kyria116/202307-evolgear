@@ -18,4 +18,3 @@
     <link rel="shortcut icon" href="dist/images/16x16.ico" type="image/x-icon" />
     <title></title>
     <link rel="stylesheet" href="dist/css/main.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">

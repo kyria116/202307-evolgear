@@ -6,7 +6,7 @@
     </p>
     <a class="btn" href="contact.php" btn_click_track="bottom_contact">聯絡我們</a>
     <div class="footer_tel">
-        <a href="tel:<?php echo $meta_data[21]["d_text"]; ?>">TEL. <?php echo $meta_data[21]["d_text"]; ?></a><br>
+        <a href="tel:<?php echo $meta_data[21]["d_text"]; ?>"><p>TEL. <?php echo $meta_data[21]["d_text"]; ?></p></a>
         <span>營業時間：<?php echo $meta_data[22]["d_text"]; ?></span>
     </div>
 

@@ -254,9 +254,11 @@ main{
         width: 100%;
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
-        
-        @include mediaquery(null,943px){
+        // justify-content: space-between;
+        justify-content: start;
+        // margin-left: auto;
+        // margin-right: auto;
+        @include mediaquery(null,1333px){
 
         }
         .product-box{
@@ -267,6 +269,9 @@ main{
             color:#000;
             text-decoration: none;
             margin-bottom: 15px;
+            @include mediaquery($lg,1333px){
+                width: 31%;
+            }
             @include mediaquery(null,$lg){
                 width: 49%;
             }
@@ -323,6 +328,24 @@ main{
                     margin-left: 8px;
                 }
             }
+            &:not(:nth-child(4n)){
+                
+                @include mediaquery(1333px,null){
+                    margin-right: 16px;
+                }
+            }
+            &:not(:nth-child(3n)){
+                @include mediaquery($lg,1333px){
+                    margin-right: 16px;
+                }
+            }
+            &:not(:nth-child(2n)){
+                @include mediaquery(null,$lg){
+                    margin-right: 1.61vw;
+                }
+            }
+
+            
         }
     }
     

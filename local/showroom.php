@@ -21,11 +21,7 @@
         </ul>
         
 
-            <!-- <div class="banner">
-                <img src="dist/images/sponsorship-top-bg.jpg" alt="">
-            </div> -->
 
-            <!-- <h3>SPONSORSHIP</h3> -->
             <div class="sr_name">
                 <p class="title_en">SHOWROOM</p>
                 <span class="title_line">_</span>
@@ -67,8 +63,7 @@
                         <img src="dist/images/sr_taiwan_10.jpg" />
                     </div>
                     </div>
-                    <!-- <div class="swiper-button-next"></div> -->
-                    <!-- <div class="swiper-button-prev"></div> -->
+
                 </div>
 
                 <div thumbsSlider="" class="swiper mySwiper">
@@ -132,7 +127,7 @@
     </main>
     <?php
     include "quote/template/footer.php";
-    // include "quote/template/top_btn.php";
+
     ?>
     
     <script src="dist/js/jquery_min.js"></script>
@@ -167,7 +162,6 @@
       allowTouchMove:false,
     });
     </script>
-    <!-- <script src="dist/js/index.js"></script> -->
 </body>
 
 </html>

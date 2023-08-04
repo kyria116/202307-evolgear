@@ -8,7 +8,9 @@
     </p>
     <a class="btn" href="contact.php" btn_click_track="bottom_contact">聯絡我們</a>
     <div class="footer_tel">
-        <p>TEL. 03-358-9863</p>
+        <a href="">
+            <p>TEL. 03-358-9863</p></a>
+        
         <span>營業時間：周一~周五10:00~18:00</span>
     </div>
 

@@ -1,9 +1,6 @@
 <?php include "quote/template/head.php"; ?>
 <link rel="stylesheet" href="dist/css/news-detail.css">
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
-/>
+
 </head>
 
 <body class="lang_tw">
@@ -13,17 +10,15 @@
     ?>
     <main>
         <ul class="breadcrumb">
-            <li>TOP</li>
+            <li><a href="">TOP</a></li>
             <li>></li>
-            <li>最新消息</li>
+            <li><a href="">最新消息</a></li>
+            <li>></li>
+            <li>123</li>
         </ul>
         
         <div class="wrapper">
-            <!-- <div class="banner">
-                <img src="dist/images/sponsorship-top-bg.jpg" alt="">
-            </div> -->
 
-            <!-- <h3>SPONSORSHIP</h3> -->
             <div class="sr_name">
                 <p class="title_en">NEWS</p>
                 <span class="title_line">_</span>
@@ -49,42 +44,12 @@
     </main>
     <?php
     include "quote/template/footer.php";
-    // include "quote/template/top_btn.php";
     ?>
     
     <script src="dist/js/jquery_min.js"></script>
     <script src="dist/js/function.js"></script>
+    
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-    <script>
-        var swiper = new Swiper(".mySwiper", {
-      spaceBetween: 5,
-      slidesPerView: 'auto',
-      loopedSlides:10,
-      freeMode: true,
-      watchSlidesProgress: true,
-    });
-    var swiper2 = new Swiper(".mySwiper2", {
-      spaceBetween: 10,
-      autoplay: {
-            delay: 2500,
-            disableOnInteraction: false,
-        },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-      effect : 'fade',
-        fadeEffect: {
-            crossFade: true,
-        },
-      thumbs: {
-        swiper: swiper,
-      },
-      allowTouchMove:false,
-    });
-    </script>
-    <!-- <script src="dist/js/index.js"></script> -->
 </body>
 
 </html>

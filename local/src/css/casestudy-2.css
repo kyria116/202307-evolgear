@@ -361,7 +361,11 @@ span.title_line {
 }
 .casestudy-detail .casestudt-under-text .editor_box {
   margin: auto;
+  margin: 0 auto;
+  margin-bottom: 72px;
+  line-height: 1.6;
   font-size: 14px;
+  color: #000;
 }
 @media (max-width: 767px) {
   .casestudy-detail .casestudt-under-text .editor_box {

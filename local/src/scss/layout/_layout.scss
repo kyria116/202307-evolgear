@@ -44,7 +44,7 @@ body.menuShow{
         
 
     }
-    .fa-comment{
+   svg{
         display: block;
         position: absolute;
         top: 50%;
@@ -53,6 +53,7 @@ body.menuShow{
         font-size: 25px;
         transform: translate(-50%,-50%);
     }
+
     
     .sidebar-content{
         display: none;
@@ -89,7 +90,7 @@ body.menuShow{
                     border-radius:40px;
                   }
             }
-            .fa-comment{
+            .talk{
                 display: none;
             }
             .fa-phone, .fa-line, .fa-facebook-messenger{
@@ -125,13 +126,16 @@ body.menuShow{
                 
             }
             .tel{
-                width: 120px;
+                // width: 120px;
+                width: 140px;
             }
             .line{
-                width: 130px;
+                // width: 130px;
+                width: 140px;
             }
             .fb{
-                width: 145px;
+                // width: 145px;
+                width: 160px;
             }
         }
         

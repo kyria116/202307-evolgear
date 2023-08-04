@@ -167,9 +167,9 @@ span.title_line{
         max-width: 90%;
     }
     ul.download_list{
-        border-top:1px solid #edeeef;
+        // border-top:1px solid #edeeef;
         border-bottom:1px solid #edeeef;
-        margin-bottom: 120px;
+        // margin-bottom: 120px;
         max-height: 183.19px;
         overflow: hidden;
         transition: max-height .5s;
@@ -179,6 +179,12 @@ span.title_line{
         @include mediaquery(null,510px){
             max-height: 160px;
             font-size: 13px;
+        }
+        &:last-child{
+            margin-bottom: 120px;
+        }
+        &:nth-child(2){
+            border-top:1px solid #edeeef;
         }
         
         &.active{

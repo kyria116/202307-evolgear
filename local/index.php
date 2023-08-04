@@ -9,19 +9,27 @@
     include "quote/template/nav.php";
     ?>
     <main>
+        <a href="">
         <div class="banner">
             <!-- PC : 2400*1500px -->
             <!-- MB : 740*1400px  -->
-            <div class="top_logo">
+            <!-- <a href=""> -->
+            <picture>
+                <source srcset="dist/images/main-image-sp.jpg" media="(max-width:740px)">
+                    <img src="dist/images/main-image.jpg" alt="" class="index-banner">
+            </picture>
+            <!-- </a> -->
+            <!-- <div class="top_logo">
                 <img src="dist/images/evolgear-logo_fromjp.png" alt="EVOLGEAR from JAPAN">
-            </div>
-            <div class="olympia-logo">
+            </div> -->
+            <!-- <div class="olympia-logo">
                 <div>
                     <img src="dist/images/olympia-logo.svg">
                 </div>
                 <p class="olympia-text">EVOLGEAR是國際健美大賽“OLYMPIA”的官方認定訓練機械品牌</p>
-            </div>
+            </div> -->
         </div>
+        </a>
 
         <section class="bg_black">
             <div class="category-link-btn">
@@ -147,33 +155,17 @@
                 <a href="news.php">read more <img src="dist/images/news_arrow.svg"></a>
             </div>
         </section>
-        
-        <!-- <div class="corner">
-            <ul>
-                <li>
-                    
-                    <ul>
-                        <li><a href=""><div class="sidebar-circle contact"><i class="fa-solid fa-phone"></i></div></a></li>
-                        <li><a href=""><div class="sidebar-circle contact"><i class="fa-brands fa-line"></i></div></a></li>
-                        <li><a href=""><div class="sidebar-circle contact"><i class="fa-brands fa-facebook-messenger"></i></div></a></li>
-                    </ul>
-                    <a href="">
-                        <div class="sidebar-circle main"><i class="fa-regular fa-comment"></i></div>
-                    </a>
-                </li>
-            </ul>
-        </div> -->
+
         <?php
             include "quote/template/sidebar.php";
         ?>
     </main>
     <?php
     include "quote/template/footer.php";
-    // include "quote/template/top_btn.php";
     ?>
     <script src="dist/js/jquery_min.js"></script>
     <script src="dist/js/function.js"></script>
-    <!-- <script src="dist/js/index.js"></script> -->
+
 </body>
 
 </html>

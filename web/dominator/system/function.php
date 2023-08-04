@@ -9,7 +9,7 @@ FALSE：回傳false。
 $project_name = "evolgear"; //資料庫&使用者名稱
 function db_conn($project_name)
 {
-	$host = "localhost";	//資料庫主機位置
+	$host = "192.168.0.169";	//資料庫主機位置
 	$user = $project_name;	//資料庫的使用者帳號
 	$password = "evolgear";	//資料庫的使用者密碼
 	$database = $project_name;	//資料庫名稱

@@ -117,13 +117,11 @@ $(document).ready(function(){
     });
 
     $('.casestudy-detail .img-wrapper').click(function() {
-      // let changeImage = $(this).find('img').attr('src');
-      // $('.casestudy-detail .main-photo img').attr('src', changeImage);
+
       $('.casestudy-detail .img-wrapper').removeClass('active');
       $(this).addClass('active');
 
       var index = $(this).index();
-      // alert(index);
 
       $('.main-photo .img-wrapper').removeClass('active');
       $('.main-photo .img-wrapper').eq(index).addClass('active');
@@ -132,7 +130,19 @@ $(document).ready(function(){
     });
 
     $('.item_open').click(function() {
-      $('.download_list').toggleClass('active');
+
+      let downloadClose = $(".download_list")
+      let download = $(this).parents('.download_list');
+      let hasClass =  download.hasClass("active");
+
+      if(hasClass){
+        download.removeClass('active');
+      }else{
+        downloadClose.removeClass("active");
+        download.addClass('active');
+
+      }
+
     });
 
     $('.corner .main').click(function(e) {

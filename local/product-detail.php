@@ -26,9 +26,9 @@
         <div class="wrapper">
             
             <div class="product-wrap">
-                <h1 class="mo">俯臥腿部訓練機
+                <p class="mo">俯臥腿部訓練機
                     <span>EVW-S001</span>
-                </h1>
+                </p>
                 <div class="product-img">
                     <div class="img-slider">
                         <!-- 1200*1200px -->
@@ -83,12 +83,7 @@
                     </div>
             </div>
 
-            <!-- <div class="section">
-                <div class="editor_content">
-                    <div class="editor_box pc_use">內容寬 這是桌機 這是桌機 這是桌機 這是桌機 這是桌機 這是桌機 這是桌機 這是桌機 這是桌機 這是桌機 這是桌機 這是桌機 這是桌機 這是桌機 這是桌機 這是桌機 這是桌機 這是桌機 這是桌機 這是桌機 這是桌機 這是桌機 這是桌機 這是桌機 這是桌機 這是桌機 這是桌機 </div>
-                    <div class="editor_box mo_use">這是手機 這是手機 這是手機 這是手機 這是手機 這是手機 這是手機 這是手機 這是手機 這是手機 這是手機 這是手機 這是手機 這是手機 這是手機 這是手機 這是手機 這是手機 這是手機 這是手機 這是手機 這是手機 這是手機 這是手機 這是手機 這是手機 這是手機 </div>
-                </div>
-            </div> -->
+
 
             <?php
             include "quote/template/sidebar.php";
@@ -97,32 +92,13 @@
     </main>
     <?php
     include "quote/template/footer.php";
-    // include "quote/template/top_btn.php";
+
     ?>
     
     <script src="dist/js/jquery_min.js"></script>
     <script src="dist/js/function.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-    <script>
-        var swiper = new Swiper(".mySwiper", {
-        spaceBetween: 30,
-        centeredSlides: true,
-        autoplay: {
-            delay: 2500,
-            disableOnInteraction: false,
-        },
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-        });
-    </script>
-    <!-- <script src="dist/js/index.js"></script> -->
+
 </body>
 
 </html>

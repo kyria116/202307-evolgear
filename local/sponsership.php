@@ -34,9 +34,7 @@
                                 <div class="swiper-slide banner2 swiper-banner"><img src="dist/images/player_yamagishi_2.jpg" alt=""></div>
                             </div>
 
-                            <!-- <div class="swiper-button-next"></div> -->
-                            <!-- <div class="swiper-button-prev"></div> -->
-                            <!-- <div class="swiper-pagination"></div> -->
+
                         </div>
                     </div>
                     <div class="pb-status">
@@ -59,30 +57,7 @@
                                 <div class="editor_box pc_use">這是桌機 這是桌機 這是桌機 這是桌機 這是桌機 這是桌機 這是桌機 這是桌機 這是桌機 這是桌機 </div>
                                 <div class="editor_box mo_use">這是手機 這是手機 這是手機 這是手機 這是手機 這是手機 這是手機 這是手機 這是手機 這是手機 </div>
                             </div>
-                            <!-- <dl>
-                                <dt>1998年</dt>
-                                <dd>東京公開賽（中量級）冠軍</dd>
-                            </dl>
-                            <dl>
-                                <dt>2001年</dt>
-                                <dd>IFBB Mr. Asia （80kg以下輕中量級）冠軍</dd>
-                            </dl>
-                            <dl>
-                                <dt>2010年</dt>
-                                <dd>EUROPA SHOW OF CHAMPIONS・ORLAND 冠軍</dd>
-                            </dl>
-                            <dl>
-                                <dt>2014年</dt>
-                                <dd>IFBB Tampa Pro （212磅級） 冠軍</dd>
-                            </dl>
-                            <dl>
-                                <dt>2016年</dt>
-                                <dd>IFBB 阿諾德經典賽 （212磅級）冠軍</dd>
-                            </dl>
-                            <dl>
-                                <dt>2019年</dt>
-                                <dd>IFBB Dallas Pro （212磅級） 冠軍／IFBB Monsterzym Pro （212磅級）冠軍</dd>
-                            </dl> -->
+
                         </div>
                     </div>
 
@@ -120,22 +95,7 @@
                                 <div class="editor_box pc_use">這是桌機 這是桌機 這是桌機 這是桌機 這是桌機 這是桌機 這是桌機 這是桌機 這是桌機 這是桌機 </div>
                                 <div class="editor_box mo_use">這是手機 這是手機 這是手機 這是手機 這是手機 這是手機 這是手機 這是手機 這是手機 這是手機 </div>
                             </div>
-                            <!-- <dl>
-                                <dt>2019年</dt>
-                                <dd>OLYMPIA AMATEUR CHINA 冠軍</dd>
-                            </dl>
-                            <dl>
-                                <dt>2019年</dt>
-                                <dd>JAPAN PRO TOP6</dd>
-                            </dl>
-                            <dl>
-                                <dt>2021年</dt>
-                                <dd>TOKYO PRO MEN’S PHYSIQUE SUPER SHOW 冠軍</dd>
-                            </dl>
-                            <dl>
-                                <dt>2021年</dt>
-                                <dd>JAPAN PRO 冠軍</dd>
-                            </dl> -->
+
                         </div>
                     </div>
 
@@ -173,26 +133,7 @@
                                 <div class="editor_box pc_use">這是桌機 這是桌機 這是桌機 這是桌機 這是桌機 這是桌機 這是桌機 這是桌機 這是桌機 這是桌機 </div>
                                 <div class="editor_box mo_use">這是手機 這是手機 這是手機 這是手機 這是手機 這是手機 這是手機 這是手機 這是手機 這是手機 </div>
                             </div>
-                            <!-- <dl>
-                                <dt>2018年</dt>
-                                <dd>JAPAN PRO QUALIFIER MEN’S PHYSIQUE -170 冠軍</dd>
-                            </dl>
-                            <dl>
-                                <dt>2019年</dt>
-                                <dd>HIDETADA YAMAGISHI, IRIS KYLE JAPAN CLASSIC 2019 PRO QUALIFIER -170 冠軍</dd>
-                            </dl>
-                            <dl>
-                                <dt>2020年</dt>
-                                <dd>IFBB PROFESSIONAL LEAGUE JAPAN NATIONAL PRO QUALIFIER MEN’S PHYSIQUE ClassA ＆ Over all 冠軍</dd>
-                            </dl>
-                            <dl>
-                                <dt>2021年</dt>
-                                <dd>TOKYO PRO MEN’S PHYSIQUE SUPER SHOW 2nd place</dd>
-                            </dl>
-                            <dl>
-                                <dt>2021年</dt>
-                                <dd>JAPAN PRO 4th place</dd>
-                            </dl> -->
+
                         </div>
                     </div>
 
@@ -231,14 +172,7 @@
                                 <div class="editor_box pc_use">這是桌機 這是桌機 這是桌機 這是桌機 這是桌機 這是桌機 這是桌機 這是桌機 這是桌機 這是桌機 </div>
                                 <div class="editor_box mo_use">這是手機 這是手機 這是手機 這是手機 這是手機 這是手機 這是手機 這是手機 這是手機 這是手機 </div>
                             </div>
-                            <!-- <dl>
-                                <dt>2021年</dt>
-                                <dd>EVOLGEAR HIDETADA YAMAGISHI, IRIS KYLE JAPAN CLASSIC BIKINI ClassB Over all 冠軍</dd>
-                            </dl>
-                            <dl>
-                                <dt>2021年</dt>
-                                <dd>JAPAN PRO 2021 BIKINI Over all 2nd place</dd>
-                            </dl> -->
+
                         </div>
                     </div>
 
@@ -262,7 +196,6 @@
     </main>
     <?php
     include "quote/template/footer.php";
-    // include "quote/template/top_btn.php";
     ?>
     
     <script src="dist/js/jquery_min.js"></script>
@@ -289,7 +222,7 @@
         },
         });
     </script>
-    <!-- <script src="dist/js/index.js"></script> -->
+
 </body>
 
 </html>

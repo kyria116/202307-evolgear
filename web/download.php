@@ -106,6 +106,56 @@ include "quote/template/head.php";
               }
             } ?>
           </ul>
+
+
+          <ul class="download_list">
+            <?php foreach ($dm_data as $k => $v) {
+              $dm_size = ($v["dm_size"] > 1024 * 1024) ? round($v["dm_size"] / 1024 / 1024, 1) . 'KB' : round($v["dm_size"] / 1024, 1) . 'MB';
+            ?>
+              <li class="pc_li">
+                <div class="download_thumb">
+                  <!-- 100*143px -->
+                  <img src="upload/<?php echo $v["dm_img"]; ?>">
+                </div>
+                <div class="download_content">
+                  <p><?php echo $v["dm_title"]; ?></p>
+                  <div class="button-wrapper">
+                    <p class="item_open">
+                      <span>+</span>
+                      按類別
+                    </p>
+
+                    <a href="pdfdownload/<?php echo $v["dm_pdf"]; ?>" class="download-1">
+                      <p>PDF</p>
+                      <span>(<?php echo $dm_size; ?>)</span>
+                  </div>
+                  </a>
+                </div>
+              </li>
+              <?php if (isset($ds_data[$k])) {
+                foreach ($ds_data[$k] as $k1 => $v1) {
+              ?>
+                  <li class="second">
+                    <p><?php echo $v1["ds_title"]; ?></p>
+                    <ol>
+                      <?php foreach ($data[$k1] as $k2 => $v2) {
+                        $d_size = ($v2["d_size"] > 1024 * 1024) ? round($v2["d_size"] / 1024 / 1024, 1) . 'KB' : round($v2["d_size"] / 1024, 1) . 'MB';
+                      ?>
+                        <li class="second-2">
+                          <p><?php echo $v2["d_title"]; ?></p>
+                          <a href="pdfdownload/<?php echo $v2["d_pdf"]; ?>" class="download">
+                            <p>PDF</p>
+                            <span>(<?php echo $d_size; ?>)</span>
+                          </a>
+                        </li>
+                      <?php } //第三層
+                      ?>
+                    </ol>
+                  </li>
+            <?php } //第二層
+              }
+            } ?>
+          </ul>
         <?php } ?>
 
       </div>
@@ -126,36 +176,9 @@ include "quote/template/head.php";
   <script src="dist/js/jquery_min.js"></script>
   <script src="dist/js/function.js"></script>
 
-  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-  <script>
-    var swiper = new Swiper(".mySwiper", {
-      spaceBetween: 5,
-      slidesPerView: 'auto',
-      loopedSlides: 10,
-      freeMode: true,
-      watchSlidesProgress: true,
-    });
-    var swiper2 = new Swiper(".mySwiper2", {
-      spaceBetween: 10,
-      autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-      effect: 'fade',
-      fadeEffect: {
-        crossFade: true,
-      },
-      thumbs: {
-        swiper: swiper,
-      },
-      allowTouchMove: false,
-    });
-  </script>
-  <!-- <script src="dist/js/index.js"></script> -->
+
+
+
 </body>
 
 </html>

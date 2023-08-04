@@ -21,11 +21,7 @@
         </ul>
         
 
-            <!-- <div class="banner">
-                <img src="dist/images/sponsorship-top-bg.jpg" alt="">
-            </div> -->
 
-            <!-- <h3>SPONSORSHIP</h3> -->
 
 
             <div class="casestudy-detail">
@@ -71,15 +67,19 @@
 
                 <div class="casestudt-under-text">
                         <h4>日本國外首次採用店！ 由被喻為“Big Hide”的職業健美選手山岸秀匡所經營的健身房。</h4>
-                        <p>在美國拉斯維加斯，新開業的POWERHOUSE GYM IRIS KYLE, HIDETADA YAMAGISHI, LAS VEGAS, NV，引進了許多EVOLGEAR的健身器材。經營者之一的山岸秀匡選手是日本健美第一人，同時也是EVOLGEAR贊助的選手之一。
+                        <!-- <p>在美國拉斯維加斯，新開業的POWERHOUSE GYM IRIS KYLE, HIDETADA YAMAGISHI, LAS VEGAS, NV，引進了許多EVOLGEAR的健身器材。經營者之一的山岸秀匡選手是日本健美第一人，同時也是EVOLGEAR贊助的選手之一。
                             <br>
                             
             在一層100坪以上的地方，擺放了琳瑯滿目的EVOLGEAR健身器材，可謂壯觀。所引進的產品種類約50多種，十分齊全。
             <br>
             
             這是EVOLGEAR的機械首次進軍到海外的案例，山岸選手回饋了很多使用後的心得與建議，對品質提升做出了巨大的貢獻。
-                        </p>
-                    </div>
+                        </p> -->
+                        <div class="editor_content">
+                            <div class="editor_box pc_use">桌機 桌機 桌機 桌機 桌機 桌機 桌機 桌機 桌機 桌機 桌機 桌機 桌機 桌機</div>
+                            <div class="editor_box mo_use">手機 手機 手機 手機 手機 手機 手機 手機 手機 手機 手機 手機 手機 手機</div>
+                        </div>
+                </div>
             </div>
         <?php
             include "quote/template/sidebar.php";
@@ -89,14 +89,14 @@
     </main>
     <?php
     include "quote/template/footer.php";
-    // include "quote/template/top_btn.php";
+
     ?>
     
     <script src="dist/js/jquery_min.js"></script>
     <script src="dist/js/function.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-    <!-- <script src="dist/js/index.js"></script> -->
+
+
 </body>
 
 </html>

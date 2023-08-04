@@ -63,42 +63,13 @@ include "quote/template/head.php";
   </main>
   <?php
   include "quote/template/footer.php";
-  // include "quote/template/top_btn.php";
+
   ?>
 
   <script src="dist/js/jquery_min.js"></script>
   <script src="dist/js/function.js"></script>
 
-  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-  <script>
-    var swiper = new Swiper(".mySwiper", {
-      spaceBetween: 5,
-      slidesPerView: 'auto',
-      loopedSlides: 10,
-      freeMode: true,
-      watchSlidesProgress: true,
-    });
-    var swiper2 = new Swiper(".mySwiper2", {
-      spaceBetween: 10,
-      autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-      effect: 'fade',
-      fadeEffect: {
-        crossFade: true,
-      },
-      thumbs: {
-        swiper: swiper,
-      },
-      allowTouchMove: false,
-    });
-  </script>
-  <!-- <script src="dist/js/index.js"></script> -->
+
 </body>
 
 </html>

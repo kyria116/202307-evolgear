@@ -176,9 +176,7 @@ span.title_line {
   }
 }
 .wrapper-2 ul.download_list {
-  border-top: 1px solid #edeeef;
   border-bottom: 1px solid #edeeef;
-  margin-bottom: 120px;
   max-height: 183.19px;
   overflow: hidden;
   -webkit-transition: max-height 0.5s;
@@ -194,6 +192,12 @@ span.title_line {
     max-height: 160px;
     font-size: 13px;
   }
+}
+.wrapper-2 ul.download_list:last-child {
+  margin-bottom: 120px;
+}
+.wrapper-2 ul.download_list:nth-child(2) {
+  border-top: 1px solid #edeeef;
 }
 .wrapper-2 ul.download_list.active {
   max-height: 2000px;

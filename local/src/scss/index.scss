@@ -5,25 +5,51 @@
 main{
     width: 100%;
     font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+    // @include mediaquery(null,428px){
+    //     padding-top: 63px;
+    // }
     .banner{
         width: 100%;
-        height: 1100px;
-        background-position:top center;
-        background-size: cover;
         display: flex;
         align-items: center;
         justify-content: center;
-        overflow: unset;
-        background-image: url("../images/main-image.jpg");
+
+        overflow: hidden;
+
         position: relative;
-        @include mediaquery(null,1024px){
-            margin-top: 63px;
-            height: 500px;
+        a{
+            display: block;
+            width: 100%;
         }
-        @include mediaquery(null,428px){
-            height: 710px;
-            margin-top: 63px;
-            background-image: url("../images/main-image-sp.jpg");
+        picture{
+            width: 100%;
+            @include mediaquery(null,740px){
+                padding-top: 63px;
+            }
+            img{
+                max-width: 100%;
+            aspect-ratio : 1 / 0.625;
+            object-fit : cover;
+            display: block;
+            
+            @include mediaquery(null,740px){
+                aspect-ratio : 1 / 1.89189;
+                width: 100%;
+                
+            }
+            }
+        }
+        .index-banner{
+            // max-width: 100%;
+            // aspect-ratio : 1 / 0.625;
+            // object-fit : cover;
+            // display: block;
+            // @include mediaquery(null,1033px){
+            //     margin-top: 63px;
+            // }
+            // @include mediaquery(null,428px){
+            //     aspect-ratio :0;
+            // }
         }
         .top_logo{
             width: fit-content;
@@ -40,8 +66,11 @@ main{
             }
             img{
                 width: 600px;
-                @include mediaquery(null,1024px){
+                @include mediaquery(762px,1024px){
                     width: 360px;
+                }
+                @include mediaquery(null,762px){
+                    width: 47.2vw;
                 }
             }
           }

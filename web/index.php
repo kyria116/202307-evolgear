@@ -39,7 +39,7 @@ include "quote/template/head.php";
             <?php  /*
                 To tommy：請調整為桌手分開。
             */ ?>
-            <div class="top_logo">
+            <!-- <div class="top_logo">
                 <img src="dist/images/evolgear-logo_fromjp.png" alt="EVOLGEAR from JAPAN">
             </div>
             <div class="olympia-logo">
@@ -47,6 +47,13 @@ include "quote/template/head.php";
                     <img src="dist/images/olympia-logo.svg">
                 </div>
                 <p class="olympia-text">EVOLGEAR是國際健美大賽“OLYMPIA”的官方認定訓練機械品牌</p>
+            </div> -->
+
+            <div class="banner">
+                <picture>
+                    <source srcset="dist/images/main-image-sp.jpg" media="(max-width:740px)">
+                        <img src="dist/images/main-image.jpg" alt="" class="index-banner">
+                </picture>
             </div>
         </a>
 
@@ -158,11 +165,11 @@ include "quote/template/head.php";
     </main>
     <?php
     include "quote/template/footer.php";
-    // include "quote/template/top_btn.php";
+
     ?>
     <script src="dist/js/jquery_min.js"></script>
     <script src="dist/js/function.js"></script>
-    <!-- <script src="dist/js/index.js"></script> -->
+
 </body>
 
 </html>

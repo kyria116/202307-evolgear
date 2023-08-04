@@ -53,9 +53,11 @@ include "quote/template/head.php";
         <div class="wrapper">
 
             <div class="product-wrap">
-                <h1 class="mo"><?php echo $data["p_title"]; ?>
+                <p class="mo">
+                    <?php echo $data["p_title"]; ?>
                     <span><?php echo $data["p_stitle"]; ?></span>
-                </h1>
+                
+                </p>
                 <?php if ($img_data) { ?>
                     <div class="product-img">
                         <div class="img-slider">
