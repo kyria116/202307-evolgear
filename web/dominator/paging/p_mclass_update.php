@@ -5,7 +5,7 @@ if (!isset($id) || !is_numeric($id)) {
 	exit();
 }
 $page_name = "p_series.php";
-$sql = "SELECT a_title,a_id,pm_title_tw,pm_id FROM article INNER JOIN `p_mclass` on article.a_id = p_mclass.ps_id WHERE pm_id = :id";
+$sql = "SELECT a_title,a_id,ps_id FROM article INNER JOIN `p_mclass` on article.a_id = p_mclass.ps_id WHERE pm_id = :id";
 $stmt = $link->prepare($sql);
 $stmt->bindParam(':id', $id, PDO::PARAM_INT);
 $stmt->execute();
@@ -34,23 +34,26 @@ include '../quote/head.php';
 		<?php
 		include '../quote/header.php';
 		include '../quote/sidebar.php';
+		$_SESSION["dom_url"] = $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 
-		$title = $row[2];
-		$db_name = "p_class";
-		$id_name = "pc_id";
-		$title_name_tw = "pc_title_tw";
-		$title_name_en = "pc_title_en";
-		$img_name = "pc_img";
-		$keyword_name = "pc_keyword";
-		$desc_name = "pc_desc";
-		$stext_name = "pc_stext";
-		$ctext_name = "pc_ctext";
-		$mtext_name = "pc_mtext";
-		$m_id_name = "pm_id";
-		$order_name = "pc_order";
+		$title =  $row[0];
+		$db_name = "p_mclass";
+		$id_name = "pm_id";
+		$title_name_tw = "pm_title_tw";
+		$title_name_en = "pm_title_en";
+		$img_name = "pm_img";
+		$keyword_name = "pm_keyword";
+		$desc_name = "pm_desc";
+		$ctext_name = "pm_ctext";
+		$mtext_name = "pm_mtext";
+		$m_id_name = "ps_id";
+		$order_name = "pm_order";
 
-		$title_current = "分類";
+		$title_current = "系列";
 
+		//資訊
+		$query = "SELECT * FROM `$db_name` WHERE $id_name = '$id'";
+		$data = sql_data($query, $link, 1);
 		$link = null;
 
 		// 1、型態：input、date、textarea、img、file、select
@@ -65,7 +68,6 @@ include '../quote/head.php';
 			array("img", "列表圖片", $img_name, "1", "600", "600"),
 			array("input", "關鍵字《meta》", $keyword_name, "關鍵字《meta》之間請以「,」分隔。", "", ""),
 			array("textarea", "網頁描述《meta》", $desc_name, "", "", "4"),
-			array("textarea", "列表簡述", $stext_name, "", "", "4"),
 			array("textarea", "內文《電腦版》", $ctext_name, "", "1", ""),
 			array("textarea", "內文《手機板》", $mtext_name, "", "1", ""),
 		);
@@ -73,15 +75,14 @@ include '../quote/head.php';
 		?>
 		<div id="content">
 			<div id="content-header" class="mini">
-				<h1><?php echo $cms_lang[22][$language]; ?> <?php echo $title; ?></h1>
+				<h1><?php echo $cms_lang[23][$language]; ?> <?php echo $title_current; ?></h1>
 				<?php include '../quote/stats.php'; ?>
 			</div>
 			<div id="breadcrumb">
 				<a href="index.php" title="<?php echo $cms_lang[9][$language]; ?>" class="tip-bottom"><i class="fa fa-home"></i> <?php echo $cms_lang[10][$language]; ?></a>
 				<a href="p_series.php">系列介紹</a>
-				<a href="<?php echo "p_mclass.php?id=" . $row[1]; ?>"><?php echo $row[0]; ?></a>
-				<a href="<?php echo 'p_class.php?id=' . $id; ?>"><?php echo $title; ?></a>
-				<a class="current"><?php echo $cms_lang[22][$language]; ?> <?php echo $title_current; ?></a>
+				<a href="<?php echo $db_name . ".php?id=" . $row[2]; ?>"><?php echo $title; ?></a>
+				<a class="current"><?php echo $cms_lang[23][$language]; ?> <?php echo $title_current; ?></a>
 			</div>
 			<div class="container-fluid">
 				<div class="row">
@@ -91,15 +92,13 @@ include '../quote/head.php';
 								<span class="icon">
 									<i class="fa fa-align-justify"></i>
 								</span>
-								<h5><?php echo $cms_lang[22][$language]; ?> <?php echo $title; ?></h5>
+								<h5><?php echo $cms_lang[23][$language]; ?> <?php echo $title; ?></h5>
 							</div>
 							<div class="widget-content nopadding">
-								<form action="../control/doadd.php?db=<?php echo $db_name; ?>" method="post" class="form-horizontal" id="form_add" name="form_add" enctype="multipart/form-data">
-									<input type="hidden" name="<?php echo $order_name; ?>" value="0" />
-									<input type="hidden" name="<?php echo $m_id_name; ?>" value="<?php echo $id; ?>" />
+								<form action="../control/doupdate.php?db=<?php echo $db_name; ?>&id_name=<?php echo $id_name; ?>&id=<?php echo $id; ?>" method="post" class="form-horizontal" id="form_update" name="form_update" enctype="multipart/form-data">
 									<?php foreach ($group_array as $v)	group($v[0], $v[1], $v[2], $v[3], $v[4], $v[5], $v[6]); ?>
 									<div class="form-actions">
-										<button type="button" class="btn btn-primary btn-sm" onclick="doadd();"><?php echo $cms_lang[22][$language]; ?></button>
+										<button type="button" class="btn btn-primary btn-sm" onclick="doupdate();"><?php echo $cms_lang[23][$language]; ?></button>
 									</div>
 								</form>
 							</div>
@@ -158,8 +157,8 @@ include '../quote/head.php';
 				}
 			}
 		};
-		//	     		新增
-		function doadd() {
+
+		function doupdate() {
 			if (cropper.length) {
 				var img = [];
 				for (var i in cropper) img[i] = cropper[i].getCroppedCanvas({
@@ -171,10 +170,10 @@ include '../quote/head.php';
 					imgcode: img
 				}, function(data) {
 					for (var i in data.msg) $("#img_name" + i).val(data.msg[i]);
-					$("#form_add").submit();
+					$("#form_update").submit();
 				}, "json");
 			} else {
-				$("#form_add").submit();
+				$("#form_update").submit();
 			}
 		};
 	</script>

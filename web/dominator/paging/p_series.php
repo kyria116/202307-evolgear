@@ -80,7 +80,7 @@ include '../quote/head.php';
 											<tr>
 												<td style="text-align: center; vertical-align: middle;" width="15%" id="td_img">
 													<div class="btn-group">
-														<button style="margin-right: 10px;" class="btn btn-xs btn-info" onclick="location.href='p_class.php?id=<?php echo (int) $v[$id_name]; ?>'">下層資料</button>
+														<button style="margin-right: 10px;" class="btn btn-xs btn-info" onclick="location.href='p_mclass.php?id=<?php echo (int) $v[$id_name]; ?>'">下層資料</button>
 													</div>
 												</td>
 												<td style="text-align: center; vertical-align: middle;" width="20%" id="td_img">

@@ -5,7 +5,10 @@ if (!isset($id) || !is_numeric($id)) {
 	exit();
 }
 $page_name = "p_series.php";
-$sql = "SELECT a_title,a_id,ps_id,pc_title_tw,pc_id FROM `p_class` JOIN `product` USING (pc_id) INNER JOIN `article` ON article.a_id = p_class.ps_id WHERE p_id = :id";
+$sql = "SELECT a_title,a_id,pm_title_tw,pm_id,pc_title_tw,pc_id FROM `p_mclass` 
+		JOIN `p_class` USING (pm_id) 
+		JOIN `product` USING (pc_id) 
+		INNER JOIN `article` ON article.a_id = p_mclass.ps_id WHERE p_id = :id";
 $stmt = $link->prepare($sql);
 $stmt->bindParam(':id', $id, PDO::PARAM_INT);
 $stmt->execute();
@@ -37,7 +40,7 @@ include '../quote/head.php';
 		include '../quote/sidebar.php';
 		$_SESSION["dom_url"] = $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 
-		$title = "《" . $row[3] . "》產品列表";
+		$title = "《" . $row[4] . "》產品列表";
 		$db_name = "product";
 		$id_name = "p_id";
 		$title_name = "p_title";
@@ -89,8 +92,9 @@ include '../quote/head.php';
 			<div id="breadcrumb">
 				<a href="index.php" title="<?php echo $cms_lang[9][$language]; ?>" class="tip-bottom"><i class="fa fa-home"></i> <?php echo $cms_lang[10][$language]; ?></a>
 				<a href="p_series.php">系列介紹</a>
-				<a href="<?php echo "p_class.php?id=" . $row[2]; ?>"><?php echo "《" . $row[0] . "》系列分類"; ?></a>
-				<a href="<?php echo "product.php?id=$row[4]"; ?>"><?php echo $title; ?></a>
+				<a href="<?php echo "p_mclass.php?id=" . $row[1]; ?>"><?php echo $row[0]; ?></a>
+				<a href="<?php echo 'p_class.php?id=' . $row[3]; ?>"><?php echo $row[2]; ?></a>
+				<a href="<?php echo "product.php?id=$row[5]"; ?>"><?php echo $title; ?></a>
 				<a class="current"><?php echo $cms_lang[23][$language]; ?> <?php echo $title_current; ?></a>
 			</div>
 			<div class="container-fluid">

@@ -13,10 +13,14 @@ $title_var = $meta_data[1]["d_text"];
 $sitekey = "";
 
 
-//產品系列分類
+//產品三大系列
 $query = "SELECT a_id,a_title,a_title_en,a_img,a_keyword,a_desc FROM `article` WHERE a_id IN (1,2,3)";
 $product_series_menu = sql_data($query, $link, 2, "a_id");
 
-//產品次選單
-$query = "SELECT pc_id,pc_title_tw,pc_title_en,ps_id FROM `p_class` ORDER BY pc_order";
-$product_class_menu = sql_data($query, $link, 3, "pc_id", "ps_id");
+//產品系列
+$query = "SELECT pm_id,pm_title_tw,pm_title_en,ps_id FROM `p_mclass` ORDER BY pm_order";
+$product_class_menu = sql_data($query, $link, 3, "pm_id", "ps_id");
+
+//產品分類
+$query = "SELECT pc_id,pc_title_tw,pc_title_en,pm_id FROM `p_class` ORDER BY pc_order";
+$product_subClass_menu = sql_data($query, $link, 3, "pc_id", "pm_id");

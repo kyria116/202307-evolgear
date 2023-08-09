@@ -8,22 +8,22 @@ if (!isset($id) || !is_numeric($id)) {
     exit();
 }
 
-//系列分類產品
-$query = "SELECT * FROM `p_class` INNER JOIN `article` ON article.a_id = p_class.ps_id WHERE pc_id = $id";
-$pc_data = sql_data($query, $link, 1);
+//三大系列 > 產品系列
+$query = "SELECT * FROM `p_mclass` INNER JOIN `article` ON article.a_id = p_mclass.ps_id WHERE pm_id = $id";
+$data = sql_data($query, $link, 1);
 
-//產品
-$query = "SELECT p_id,p_title,p_stitle,p_news,p_img FROM `product` WHERE pc_id = $id";
-$data = sql_data($query, $link, 2, "p_id");
+//產品分類
+$query = "SELECT pc_id,pc_title_tw,pc_title_en,pc_img,pc_stext FROM `p_class` WHERE pm_id = $id ORDER BY pc_order";
+$pc_data = sql_data($query, $link, 2, "pc_id");
 
 $link = null;
-$title_var =  $pc_data["pc_title_tw"] . " | " . $title_var;
-$meta_data[2]["d_text"] = $pc_data["pc_keyword"];
-$meta_data[3]["d_text"] = $pc_data["pc_desc"];
+$title_var =  $data["pm_title_tw"] . " | " . $title_var;
+$meta_data[2]["d_text"] = $data["pm_keyword"];
+$meta_data[3]["d_text"] = $data["pm_desc"];
 
 include "quote/template/head.php";
 ?>
-<link rel="stylesheet" href="dist/css/product-menu2.css">
+<link rel="stylesheet" href="dist/css/product-menu1.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 </head>
 
@@ -36,41 +36,38 @@ include "quote/template/head.php";
         <ul class="breadcrumb">
             <li><a href="./">HOME</a></li>
             <li>></li>
-            <li><a href="./product.php?id=<?php echo $pc_data["ps_id"]; ?>"><?php echo $pc_data["a_title"]; ?></a></li>
+            <li><a href="./product.php?id=<?php echo $data["ps_id"]; ?>"><?php echo $data["a_title"]; ?></a></li>
             <li>></li>
-            <li><?php echo $pc_data["pc_title_tw"]; ?></li>
+            <li><?php echo $data["pm_title_tw"]; ?></li>
         </ul>
         <div class="wrapper">
 
-            <p class="title_en">WEIGHT STACK</p>
+            <p class="title_en"><?php echo $data["pm_title_en"]; ?></p>
             <span class="title_line">_</span>
-            <h1 class="read_jp">配重片系列</h1>
+            <h1 class="read_jp"><?php echo $data["pm_title_tw"]; ?></h1>
 
             <div class="section">
                 <div class="editor_content">
-                    <div class="editor_box pc_use"><?php echo html_decode($pc_data["pc_ctext"]); ?></div>
-                    <div class="editor_box mo_use"><?php echo ($pc_data["pc_mtext"] == "") ? html_decode($pc_data["pc_ctext"]) : html_decode($pc_data["pc_mtext"]); ?></div>
+                    <div class="editor_box pc_use"><?php echo html_decode($data["pm_ctext"]); ?></div>
+                    <div class="editor_box mo_use"><?php echo ($data["pm_mtext"] == "") ? html_decode($data["pm_ctext"]) : html_decode($data["pm_mtext"]); ?></div>
                 </div>
             </div>
 
-            <div class="series-row">
-                <!-- 新的產品則有new這個class -->
-                <?php foreach ($data as $k => $v) { ?>
-                    <div class="col <?php echo ($v["p_news"] == 1) ? "new" : ""; ?>">
-                        <h2>
-                            <?php echo $v["p_title"]; ?><br>
-                            <span><?php echo $v["p_stitle"]; ?></span>
-                        </h2>
-                        <a href="./product-detail.php?id=<?php echo $k; ?>">
-                            <!-- 如果是新的產品 span會display block -->
-                            <?php echo ($v["p_news"] == 1) ? '<span>NEW</span>' : ''; ?>
-                            <!-- 1200*1200px -->
-                            <img src="upload/<?php echo $v["p_img"]; ?>" alt="<?php echo $v["p_title"]; ?>">
+            <div class="category_row">
+                <?php foreach ($pc_data as $k => $v) { ?>
+                    <div class="col">
+                        <a href="./product-list.php?id=<?php echo $k; ?>">
+                            <p class="category_name_en"><?php echo $v["pc_title_en"]; ?></p>
+                            <h2 class="category_name"><?php echo $v["pc_title_tw"]; ?></h2>
+                            <img src="upload/<?php echo $v["pc_img"]; ?>" alt="<?php echo $v["pc_title_tw"]; ?>">
+                            <p class="category_text"><?php echo $v["pc_stext"]; ?></p>
+                        </a>
+                        <a href="./product-list.php?id=<?php echo $k; ?>" class="btn">
+                            查看列表
                         </a>
                     </div>
                 <?php } ?>
             </div>
-
             <?php
             include "quote/template/sidebar.php";
             ?>

@@ -5,7 +5,7 @@ if (!isset($id) || !is_numeric($id)) {
 	exit();
 }
 $page_name = "p_series.php";
-$sql = "SELECT a_title,a_id,pm_title_tw,pm_id FROM article INNER JOIN `p_mclass` on article.a_id = p_mclass.ps_id WHERE pm_id = :id";
+$sql = "SELECT a_title,a_id FROM article WHERE a_id = :id";
 $stmt = $link->prepare($sql);
 $stmt->bindParam(':id', $id, PDO::PARAM_INT);
 $stmt->execute();
@@ -32,19 +32,18 @@ include '../quote/head.php';
 		include '../quote/sidebar.php';
 		$_SESSION["dom_url"] = $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 
-		$title = $row[2];
-		$db_name = "p_class";
-		$id_name = "pc_id";
-		$title_name_tw = "pc_title_tw";
-		$title_name_en = "pc_title_en";
-		$img_name = "pc_img";
-		$keyword_name = "pc_keyword";
-		$desc_name = "pc_desc";
-		$stext_name = "pc_stext";
-		$ctext_name = "pc_ctext";
-		$mtext_name = "pc_mtext";
-		$m_id_name = "pm_id";
-		$order_name = "pc_order";
+		$title =  $row[0];
+		$db_name = "p_mclass";
+		$id_name = "pm_id";
+		$title_name_tw = "pm_title_tw";
+		$title_name_en = "pm_title_en";
+		$img_name = "pm_img";
+		$keyword_name = "pm_keyword";
+		$desc_name = "pm_desc";
+		$ctext_name = "pm_ctext";
+		$mtext_name = "pm_mtext";
+		$m_id_name = "ps_id";
+		$order_name = "pm_order";
 
 		$paging = false; //如果不使用php分頁，請改為：false
 		if ($paging) {
@@ -77,7 +76,6 @@ include '../quote/head.php';
 			<div id="breadcrumb">
 				<a href="index.php" title="<?php echo $cms_lang[9][$language]; ?>" class="tip-bottom"><i class="fa fa-home"></i> <?php echo $cms_lang[10][$language]; ?></a>
 				<a href="p_series.php">系列介紹</a>
-				<a href="<?php echo "p_mclass.php?id=" . $row[1]; ?>"><?php echo $row[0]; ?></a>
 				<a class="current"><?php echo $title; ?></a>
 			</div>
 			<div class="row">
@@ -110,7 +108,7 @@ include '../quote/head.php';
 											<tr>
 												<td style="text-align: center; vertical-align: middle;" width="20%" id="td_img">
 													<div class="btn-group">
-														<button style="margin-right: 10px;" class="btn btn-xs btn-info" onclick="javascript:location.href='product.php?id=<?php echo $v[$id_name]; ?>'">產品資訊</button>
+														<button style="margin-right: 10px;" class="btn btn-xs btn-info" onclick="javascript:location.href='p_class.php?id=<?php echo $v[$id_name]; ?>'">產品分類</button>
 														<button data-toggle="dropdown" class="btn btn-xs btn-info dropdown-toggle"><span class="caret"></span></button>
 														<ul class="dropdown-menu dropdown-yellow">
 															<li><a href="<?php echo $db_name; ?>_update.php?id=<?php echo $v[$id_name]; ?>"><?php echo $cms_lang[23][$language]; ?></a></li>

@@ -16,8 +16,9 @@ $pc_id = $data["pc_id"];
 if (empty($data)) goto to_exit;
 if ($data["p_status"] == 0 && !isset($_SESSION["dominator_account"]))  goto to_exit;
 
-//系列分類資訊
-$query = "SELECT * FROM `p_class` INNER JOIN `article` ON article.a_id = p_class.ps_id WHERE pc_id = $pc_id";
+//三大系列 > 產品系列 > 產品分類 > 產品
+$query = "SELECT a_title,ps_id,pm_title_tw,pm_id,pc_title_tw,pc_title_en,pc_keyword,pc_desc,pc_ctext,pc_mtext,pc_id 
+            FROM `p_class` JOIN `p_mclass` USING(pm_id) JOIN `product` USING(pc_id) INNER JOIN `article` ON article.a_id = p_mclass.ps_id WHERE p_id = $id";
 $pc_data = sql_data($query, $link, 1);
 
 //產品圖
@@ -46,7 +47,9 @@ include "quote/template/head.php";
             <li>></li>
             <li><a href="./product.php?id=<?php echo $pc_data["ps_id"]; ?>"><?php echo $pc_data["a_title"]; ?></a></li>
             <li>></li>
-            <li><a href="./product-series.php?id=<?php echo $pc_data["pc_id"]; ?>"><?php echo $pc_data["pc_title_tw"]; ?></a></li>
+            <li><a href="./product-series.php?id=<?php echo $pc_data["pm_id"]; ?>"><?php echo $pc_data["pm_title_tw"]; ?></a></li>
+            <li>></li>
+            <li><a href="./product-list.php?id=<?php echo $pc_data["pc_id"]; ?>"><?php echo $pc_data["pc_title_tw"]; ?></a></li>
             <li>></li>
             <li><?php echo $data["p_title"]; ?></li>
         </ul>
@@ -56,7 +59,7 @@ include "quote/template/head.php";
                 <p class="mo">
                     <?php echo $data["p_title"]; ?>
                     <span><?php echo $data["p_stitle"]; ?></span>
-                
+
                 </p>
                 <?php if ($img_data) { ?>
                     <div class="product-img">

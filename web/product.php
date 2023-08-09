@@ -18,9 +18,9 @@ $banner_data = sql_data($query, $link);
 $query = "SELECT e_title,e_ctext,e_mtext,e_img AS e_template FROM `essay` WHERE e_page = 2 AND id = $id AND e_status = 1 ORDER BY e_order";
 $essay_data = sql_data($query, $link);
 
-//系列分類產品
-$query = "SELECT pc_id,pc_title_tw,pc_title_en,pc_img FROM `p_class` WHERE ps_id = $id";
-$pc_data = sql_data($query, $link, 2, "pc_id");
+//產品系列
+$query = "SELECT pm_id,pm_title_tw,pm_title_en,pm_img FROM `p_mclass` WHERE ps_id = $id ORDER BY pm_order";
+$pm_data = sql_data($query, $link, 2, "pm_id");
 
 
 $link = null;
@@ -80,11 +80,11 @@ include "quote/template/head.php";
             <div class="contents-in">
                 <h3>PRODUCTS</h3>
                 <div class="product-box-area">
-                    <?php foreach ($pc_data as $k => $v) { ?>
+                    <?php foreach ($pm_data as $k => $v) { ?>
                         <a class="product-box" href="./product-series.php?id=<?php echo $k; ?>">
-                            <div class="product-name"><span><?php echo $v["pc_title_tw"]; ?></span><?php echo $v["pc_title_en"]; ?></div>
+                            <div class="product-name"><span><?php echo $v["pm_title_tw"]; ?></span><?php echo $v["pm_title_en"]; ?></div>
                             <!-- 600*600px -->
-                            <img src="upload/<?php echo $v["pc_img"]; ?>">
+                            <img src="upload/<?php echo $v["pm_img"]; ?>">
                             <div class="btn-lineup">產品一覽<img src="dist/images/btn-arrow-white.svg" class="btn-arrow"></div>
                         </a>
                     <?php } ?>

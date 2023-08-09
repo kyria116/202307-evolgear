@@ -22,19 +22,20 @@
 									<p class="title"><?php echo $product_series_menu[1]["a_title_en"]; ?><span class="arrow-2"></span><br><span><?php echo $product_series_menu[1]["a_title"]; ?></span></p>
 								</a>
 							</li>
-							<?php foreach ($product_class_menu[1] as $k => $v) { ?>
-								<li class="product-series-2">
-									<a href="./product-series.php?id=<?php echo $k; ?>" class="menu-h"><?php echo $v["pc_title_tw"]; ?></a>
-									<ol>
-										<li><a href="./product-list.php">配重片系列</a></li>
-										<li><a href="">槓片系列</a></li>
-										<li><a href="">纜繩滑輪機</a></li>
-										<li><a href="">多功能重量訓練架</a></li>
-										<li><a href="">訓練架&amp;訓練椅</a></li>
-										<li><a href="">綜合訓練架</a></li>
-									</ol>
-								</li>
-							<?php } ?>
+							<?php if (isset($product_class_menu[1])) {
+								foreach ($product_class_menu[1] as $k => $v) { ?>
+									<li class="product-series-2">
+										<a href="./product-series.php?id=<?php echo $k; ?>" class="menu-h"><?php echo $v["pm_title_tw"]; ?></a>
+										<?php if (isset($product_subClass_menu[$k])) { ?>
+											<ol>
+												<?php foreach ($product_subClass_menu[$k] as $k1 => $v1) { ?>
+													<li><a href="./product-list.php?id=<?php echo $k1; ?>"><?php echo $v1["pc_title_tw"]; ?></a></li>
+												<?php } ?>
+											</ol>
+										<?php } ?>
+									</li>
+							<?php }
+							} ?>
 						</ol>
 						<ol class="series2 product-series">
 							<li>
@@ -43,25 +44,43 @@
 									<p class="title"><?php echo $product_series_menu[2]["a_title_en"]; ?><span class="arrow-2"></span><br><span><?php echo $product_series_menu[1]["a_title"]; ?></span></p>
 								</a>
 							</li>
-							<?php foreach ($product_class_menu[2] as $k => $v) { ?>
-								<li class="product-series-2">
-									<a href="./product-series.php?id=<?php echo $k; ?>" class="menu-h"><?php echo $v["pc_title_tw"]; ?></a>
-								</li>
-							<?php } ?>
+							<?php if (isset($product_class_menu[2])) {
+								foreach ($product_class_menu[2] as $k => $v) { ?>
+									<li class="product-series-2">
+										<a href="./product-series.php?id=<?php echo $k; ?>" class="menu-h"><?php echo $v["pm_title_tw"]; ?></a>
+										<?php if (isset($product_subClass_menu[$k])) { ?>
+											<ol>
+												<?php foreach ($product_subClass_menu[$k] as $k1 => $v1) { ?>
+													<li><a href="./product-list.php?id=<?php echo $k1; ?>"><?php echo $v1["pc_title_tw"]; ?></a></li>
+												<?php } ?>
+											</ol>
+										<?php } ?>
+									</li>
+							<?php }
+							} ?>
 						</ol>
 
 						<ol class="series3 product-series">
 							<li>
 								<a href="product.php?id=3">
 									<img src="upload/<?php echo $product_series_menu[3]["a_img"]; ?>" alt="<?php echo $product_series_menu[1]["a_title"]; ?>">
-									<p class="title"><?php echo $product_series_menu[1]["a_title_en"]; ?><span class="arrow-2"></span><br><span><?php echo $product_series_menu[1]["a_title"]; ?></span></p>
+									<p class="title"><?php echo $product_series_menu[1]["a_title_en"]; ?><span class="arrow-2"></span><br><span><?php echo $product_series_menu[3]["a_title"]; ?></span></p>
 								</a>
 							</li>
-							<?php foreach ($product_class_menu[3] as $k => $v) { ?>
-								<li class="product-series-2">
-									<a href="./product-series.php?id=<?php echo $k; ?>" class="menu-h"><?php echo $v["pc_title_tw"]; ?></a>
-								</li>
-							<?php } ?>
+							<?php if (isset($product_class_menu[3])) {
+								foreach ($product_class_menu[3] as $k => $v) { ?>
+									<li class="product-series-2">
+										<a href="./product-series.php?id=<?php echo $k; ?>" class="menu-h"><?php echo $v["pm_title_tw"]; ?></a>
+										<?php if (isset($product_subClass_menu[$k])) { ?>
+											<ol>
+												<?php foreach ($product_subClass_menu[$k] as $k1 => $v1) { ?>
+													<li><a href="./product-list.php?id=<?php echo $k1; ?>"><?php echo $v1["pc_title_tw"]; ?></a></li>
+												<?php } ?>
+											</ol>
+										<?php } ?>
+									</li>
+							<?php }
+							} ?>
 						</ol>
 
 

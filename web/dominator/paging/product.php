@@ -5,12 +5,12 @@ if (!isset($id) || !is_numeric($id)) {
 	exit();
 }
 $page_name = "p_series.php";
-$sql = "SELECT a_title,a_id,ps_id,pc_title_tw,pc_id FROM article INNER JOIN `p_class` on article.a_id = p_class.ps_id WHERE pc_id = :id";
+$sql = "SELECT a_title,a_id,pm_title_tw,pm_id,pc_title_tw,pc_id FROM `p_mclass` JOIN `p_class` USING (pm_id) INNER JOIN `article` ON article.a_id = p_mclass.ps_id WHERE pc_id = :id";
 $stmt = $link->prepare($sql);
 $stmt->bindParam(':id', $id, PDO::PARAM_INT);
 $stmt->execute();
 $row = $stmt->fetch(PDO::FETCH_NUM);
-$parents_id = $row[4];
+$parents_id = $row[5];
 
 include '../quote/head.php';
 ?>
@@ -34,7 +34,7 @@ include '../quote/head.php';
 		include '../quote/sidebar.php';
 		$_SESSION["dom_url"] = $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 
-		$title = "《" . $row[3] . "》產品列表";
+		$title = "《" . $row[4] . "》產品列表";
 		$db_name = "product";
 		$id_name = "p_id";
 		$title_name = "p_title";
@@ -82,7 +82,8 @@ include '../quote/head.php';
 			<div id="breadcrumb">
 				<a href="index.php" title="<?php echo $cms_lang[9][$language]; ?>" class="tip-bottom"><i class="fa fa-home"></i> <?php echo $cms_lang[10][$language]; ?></a>
 				<a href="p_series.php">系列介紹</a>
-				<a href="<?php echo "p_class.php?id=" . $row[1]; ?>"><?php echo "《" . $row[0] . "》系列分類"; ?></a>
+				<a href="<?php echo "p_mclass.php?id=" . $row[1]; ?>"><?php echo $row[0]; ?></a>
+				<a href="<?php echo 'p_class.php?id=' . $row[3]; ?>"><?php echo $row[2]; ?></a>
 				<a class="current"><?php echo $title; ?></a>
 			</div>
 			<div class="row">
@@ -132,7 +133,7 @@ include '../quote/head.php';
 													<?php echo $v[$title_name]; ?>
 												</td>
 												<td style="text-align: center; vertical-align: middle; word-break:break-all;" width="20%">
-													<button data-toggle="dropdown" class="btn btn-xs btn-info dropdown-toggle" style="margin-right:5px;" onclick="window.open('<?php echo $url_set . $_SERVER['HTTP_HOST'] . '/news-detail.php?id=' . $v[$id_name]; ?>')">查看 </button>
+													<button data-toggle="dropdown" class="btn btn-xs btn-info dropdown-toggle" style="margin-right:5px;" onclick="window.open('<?php echo $url_set . $_SERVER['HTTP_HOST'] . '/product-detail.php?id=' . $v[$id_name]; ?>')">查看 </button>
 													<select onchange="select_check('<?php echo $v[$id_name]; ?>');" id="check_<?php echo $v[$id_name]; ?>">
 														<?php
 														foreach ($status_data as $k1 => $v1) {
