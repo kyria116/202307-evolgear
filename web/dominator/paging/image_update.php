@@ -18,12 +18,18 @@ if ($id > 10) {
 				break;
 			case 3:
 				$page_name = "p_series.php";
-				$sql = "SELECT 
-					p_title,p_id,a_title,a_id,ps_id,pc_title_tw,pc_id FROM `p_class` 
+				$sql = "SELECT a_title,a_id,pm_title_tw,pm_id,pc_title_tw,pc_id,p_title,p_id FROM `p_mclass` 
+					JOIN `p_class` USING (pm_id) 
 					JOIN `product` USING (pc_id) 
-					INNER JOIN `article` ON article.a_id = p_class.ps_id 
+					INNER JOIN `article` ON article.a_id = p_mclass.ps_id 
 					INNER JOIN `image` ON product.p_id = image.related_id
 					WHERE i_id = :id AND i_page = 3";
+
+				// $sql = "SELECT p_title,p_id,a_title,a_id,ps_id,pc_title_tw,pc_id FROM `p_class` 
+				// 	JOIN `product` USING (pc_id) 
+				// 	INNER JOIN `article` ON article.a_id = p_class.ps_id 
+				// 	INNER JOIN `image` ON product.p_id = image.related_id
+				// 	WHERE i_id = :id AND i_page = 3";
 				break;
 			case 4:
 				$page_name = "sponsor.php";
@@ -107,7 +113,7 @@ include '../quote/head.php';
 				array("img", "圖片", $img_name_c, "1", "1920", "614"),
 			);
 		} else {
-			$title = "《" . $row[0] . "》" . "圖片管理";
+			$title = "《" . $row[6] . "》" . "圖片管理";
 			$title_current = "圖片";
 
 			switch ($page_id) {
@@ -154,8 +160,10 @@ include '../quote/head.php';
 					<a href="p_series.php">系列介紹</a>
 				<?php } else if ($page_id == 3) { ?>
 					<a href="p_series.php">系列介紹</a>
-					<a href="<?php echo "p_class.php?id=" . $row[3]; ?>"><?php echo "《" . $row[2] . "》系列分類"; ?></a>
-					<a href="<?php echo "product.php?id=$row[6]"; ?>"><?php echo "《" . $row[5] . "》產品列表"; ?></a>
+					<a href="<?php echo "p_mclass.php?id=" . $row[1]; ?>"><?php echo $row[0]; ?></a>
+					<a href="<?php echo 'p_class.php?id=' . $row[3]; ?>"><?php echo $row[2]; ?></a>
+					<a href="<?php echo "product.php?id=$row[5]"; ?>"><?php echo "《" . $row[4] . "》產品列表"; ?></a>
+
 				<?php } else if ($page_id == 4 && $id != 2) { ?>
 					<a href="sponsor.php">人員介紹管理</a>
 				<?php } else if ($page_id == 6) { ?>
