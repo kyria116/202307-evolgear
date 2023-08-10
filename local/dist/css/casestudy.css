@@ -173,22 +173,13 @@ span.title_line {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   padding-bottom: 120px;
 }
-@media all and (max-width: 575px) {
-  .casestudy-wrap {
-    max-width: calc(100% - 30px);
-    padding-bottom: 70px;
-  }
-}
 .casestudy-wrap a {
   display: block;
-  width: 24%;
+  width: 23%;
   background: #f4f6f7;
   cursor: pointer;
   padding: 30px;
@@ -198,9 +189,19 @@ span.title_line {
   text-decoration: none;
   color: #3b3c3d;
 }
-@media all and (max-width: 1024px) {
+@media all and (min-width: 1187px) {
+  .casestudy-wrap a:not(:nth-child(4n)) {
+    margin-right: 1.25vw;
+  }
+}
+@media all and (min-width: 769px) and (max-width: 1186px) {
+  .casestudy-wrap a:not(:nth-child(2n)) {
+    margin-right: 1.25vw;
+  }
+}
+@media all and (max-width: 1186px) {
   .casestudy-wrap a {
-    width: 49%;
+    width: 46%;
   }
 }
 @media all and (max-width: 768px) {

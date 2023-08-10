@@ -168,16 +168,24 @@ span.title_line{
     max-width: calc( 100% - 100px );
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
+
     flex-wrap: wrap;
     padding-bottom: 120px;
-    @include mediaquery(null,$sm){
-        max-width: calc( 100% - 30px );
-        padding-bottom: 70px;
-    }
+
     a{
+        &:not(:nth-child(4n)){
+            @include mediaquery(1187px,null){
+                margin-right: 1.25vw;
+            }
+        }
+        &:not(:nth-child(2n)){
+            @include mediaquery($md,1187px){
+                margin-right: 1.25vw;
+            }
+
+        }   
         display: block;
-        width: 24%;
+        width: 23%;
         background: #f4f6f7;
         cursor: pointer;
         padding: 30px;
@@ -185,9 +193,12 @@ span.title_line{
         margin-top: 20px;
         text-decoration: none;
         color: #3b3c3d;
-        @include mediaquery(null,1025px){
-            width: 49%;
+        @include mediaquery(null,1187px){
+            width: 46%;
         }
+        // @include mediaquery(null,1025px){
+        //     width: 49%;
+        // }
         @include mediaquery(null,$md){
             width: 100%;
         }
