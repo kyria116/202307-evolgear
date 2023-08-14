@@ -92,11 +92,12 @@ include "quote/template/head.php";
                       <p><?php echo $v1["ds_title"]; ?></p>
                       <ol>
                         <?php foreach ($data[$k1] as $k2 => $v2) {
-                          $d_size = ($v2["d_size"] > 1024 * 1024) ? round($v2["d_size"] / 1024 / 1024, 1) . 'KB' : round($v2["d_size"] / 1024, 1) . 'MB';
+                          $v2["d_size"] = ($v2["d_size"] == "") ? 0 : $v2["d_size"];
+                          $d_size = ($v2["d_size"] > 1024 * 1024) ? round($v2["d_size"] / 1024 / 1024, 1) . 'MB' : round($v2["d_size"] / 1024, 1) . 'KB';
                         ?>
                           <li class="second-2">
                             <p><?php echo $v2["d_title"]; ?></p>
-                            <a href="pdfdownload/<?php echo $v2["d_pdf"]; ?>" class="download">
+                            <a href="pdfdownload/<?php echo $v2["d_pdf"]; ?>" class="download" target="_blank">
                               <p>PDF</p>
                               <span>(<?php echo $d_size; ?>)</span>
                             </a>

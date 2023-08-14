@@ -13,6 +13,7 @@ if ($page_id == 5) {
 		case 2:
 			$page_name = "p_series.php";
 			$sql = "SELECT a_title,a_id FROM article WHERE a_id = :id";
+			// $title = "BANNER輪播";
 			break;
 		case 3:
 			$page_name = "p_series.php";
@@ -56,7 +57,7 @@ include '../quote/head.php';
 		include '../quote/sidebar.php';
 		$_SESSION["dom_url"] = $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 
-		$title = "《" . $row[6] . "》" . "圖片管理";
+		$title = ($page_id == 3) ? "《" . $row[6] . "》圖片管理" : "《" . $row[0] . "》圖片管理";
 		$db_name = "image";
 		$id_name = "i_id";
 		$title_name = "i_title";

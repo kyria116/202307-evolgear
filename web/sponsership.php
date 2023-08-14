@@ -8,7 +8,7 @@ $banner_data = sql_data($query, $link, 1);
 
 //sponsor
 $query = "SELECT * FROM `sponsor` ORDER BY s_order";
-$data = sql_data($query, $link);
+$data = sql_data($query, $link, 2, "s_id");
 
 //人物圖
 $query = "SELECT i_id,related_id,i_img_c FROM `image` WHERE i_page = 4 AND i_id > 10 ORDER BY i_order";
@@ -45,7 +45,7 @@ include "quote/template/head.php";
                 <div class="content-in">
                     <div class="player-box">
                         <div class="pb-img">
-                            <?php if ($img_data) { ?>
+                            <?php if (isset($img_data[$k])) { ?>
                                 <div class="swiper mySwiper">
                                     <div class="swiper-wrapper">
                                         <?php foreach ($img_data[$k] as $k1 => $v1) { ?>

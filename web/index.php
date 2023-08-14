@@ -51,12 +51,11 @@ include "quote/template/head.php";
 
             <div class="banner">
                 <picture>
-                    <source srcset="dist/images/main-image-sp.jpg" media="(max-width:740px)">
-                        <img src="dist/images/main-image.jpg" alt="" class="index-banner">
+                    <source srcset="upload/<?php echo $banner_data["i_img_m"]; ?>" media="(max-width:740px)">
+                    <img src="upload/<?php echo $banner_data["i_img_c"]; ?>" alt="" class="index-banner">
                 </picture>
             </div>
         </a>
-
         <section class="bg_black">
             <div class="category-link-btn">
                 <ul>

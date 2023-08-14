@@ -61,8 +61,8 @@ include "quote/template/head.php";
                     <span><?php echo $data["p_stitle"]; ?></span>
 
                 </p>
-                <?php if ($img_data) { ?>
-                    <div class="product-img">
+                <div class="product-img">
+                    <?php if ($img_data) { ?>
                         <div class="img-slider">
                             <!-- 1200*1200px -->
                             <img src="upload/<?php echo $img_data[1]["i_img_c"]; ?>">
@@ -76,8 +76,8 @@ include "quote/template/head.php";
                                 <?php } ?>
                             </ul>
                         </div>
-                    </div>
-                <?php } ?>
+                    <?php } ?>
+                </div>
                 <div class="product-detail">
                     <div class="detail-area">
                         <h1><?php echo $data["p_title"]; ?>

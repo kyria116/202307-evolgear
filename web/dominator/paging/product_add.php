@@ -73,8 +73,8 @@ include '../quote/head.php';
 			array("select", "最新商品", $news_name, $product_new, "", ""),
 			array("textarea", "產品說明《電腦版》", $ctext1_name, "", "1", ""),
 			array("textarea", "產品說明《手機版》", $mtext1_name, "", "1", ""),
-			array("textarea", "內文《電腦版》", $ctext1_name, "", "1", ""),
-			array("textarea", "內文《手機版》", $mtext1_name, "", "1", ""),
+			array("textarea", "內文《電腦版》", $ctext2_name, "", "1", ""),
+			array("textarea", "內文《手機版》", $mtext2_name, "", "1", ""),
 		);
 		$group_array = g_array($group_array, $data);
 		?>
