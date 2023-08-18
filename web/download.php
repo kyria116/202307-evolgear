@@ -59,7 +59,7 @@ include "quote/template/head.php";
 
         <?php if ($dm_data) { ?>
           <?php foreach ($dm_data as $k => $v) {
-            $dm_size = ($v["dm_size"] > 1024 * 1024) ? round($v["dm_size"] / 1024 / 1024, 1) . 'KB' : round($v["dm_size"] / 1024, 1) . 'MB';
+            $dm_size = ($v["dm_size"] > 1024 * 1024) ? round($v["dm_size"] / 1024 / 1024, 1) . 'MB' : round($v["dm_size"] / 1024, 1) . 'KB';
           ?>
             <ul class="download_list">
               <li class="pc_li">
@@ -77,7 +77,7 @@ include "quote/template/head.php";
                       </p>
                     <?php } ?>
 
-                    <a href="pdfdownload/<?php echo $v["dm_pdf"]; ?>" class="download-1">
+                    <a href="pdfdownload/<?php echo $v["dm_pdf"]; ?>" class="download-1"  target="_blank">
                       <p>PDF</p>
                       <span>(<?php echo $dm_size; ?>)</span>
                   </div>
