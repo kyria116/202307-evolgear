@@ -107,7 +107,7 @@ include "quote/template/head.php";
                         <img src="upload/<?php echo $product_series_menu[2]["a_img"]; ?>" class="ed-img">
                         <div class="ed-tit">
                             <div class="ed-tit-cat"><?php echo $product_series_menu[2]["a_title_en"]; ?></div>
-                            <div class="ed-tit-caption">查看<?php echo $product_series_menu[1]["a_title"]; ?></div>
+                            <div class="ed-tit-caption">查看<?php echo $product_series_menu[2]["a_title"]; ?></div>
                         </div>
                     </div>
                 </a>

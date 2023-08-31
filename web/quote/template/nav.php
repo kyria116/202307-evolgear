@@ -41,7 +41,7 @@
 							<li>
 								<a href="./product.php?id=2">
 									<img src="upload/<?php echo $product_series_menu[2]["a_img"]; ?>" alt="<?php echo $product_series_menu[2]["a_title"]; ?>">
-									<p class="title"><?php echo $product_series_menu[2]["a_title_en"]; ?><span class="arrow-2"></span><br><span><?php echo $product_series_menu[1]["a_title"]; ?></span></p>
+									<p class="title"><?php echo $product_series_menu[2]["a_title_en"]; ?><span class="arrow-2"></span><br><span><?php echo $product_series_menu[2]["a_title"]; ?></span></p>
 								</a>
 							</li>
 							<?php if (isset($product_class_menu[2])) {

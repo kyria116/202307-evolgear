@@ -22,7 +22,7 @@ $query = "SELECT a_title,ps_id,pm_title_tw,pm_id,pc_title_tw,pc_title_en,pc_keyw
 $pc_data = sql_data($query, $link, 1);
 
 //產品圖
-$query = "SELECT * FROM `image` WHERE related_id = $id AND i_page = 3";
+$query = "SELECT * FROM `image` WHERE related_id = $id AND i_page = 3 ORDER BY i_order";
 $img_data = sql_data($query, $link);
 
 $link = null;
