@@ -14,7 +14,7 @@ $query = "SELECT a_title,ps_id,pm_title_tw,pm_id,pc_title_tw,pc_title_en,pc_keyw
 $data = sql_data($query, $link, 1);
 
 //產品
-$query = "SELECT p_id,p_title,p_stitle,p_news,p_img FROM `product` WHERE pc_id = $id AND p_status = 1";
+$query = "SELECT p_id,p_title,p_stitle,p_news,p_img FROM `product` WHERE pc_id = $id AND p_status = 1 ORDER BY p_order";
 $p_data = sql_data($query, $link, 2, "p_id");
 
 $link = null;
