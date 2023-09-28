@@ -36,7 +36,7 @@ include "quote/template/head.php";
     <div class="wrapper">
 
       <ul class="breadcrumb">
-        <li><a href="">HOME</a></li>
+        <li><a href="./">HOME</a></li>
         <li>></li>
         <li><?php echo $data["a_title"]; ?></li>
       </ul>
