@@ -89,8 +89,12 @@ if ($temp["success"] &&  isset($_COOKIE["captcha"])) {
 									        <p>' . $name . '</p>
 									        <p><b>聯絡電話  </b></p>
 									        <p>' . $tel . '</p>
+											<p><b>聯絡信箱  </b></p>
+									        <p>' . $mail . '</p>
 											<p><b>公司行號  </b></p>
 									        <p>' . $title . '</p>
+											<p><b>地址  </b></p>
+									        <p>' . $addr . '</p>
 									        <p><b>內容：</b></p>
 									        <p>' . str_replace("\\r\\n", "<br/>", html_decode($text)) . '</p>
 									    </div>
